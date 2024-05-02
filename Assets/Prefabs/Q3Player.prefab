@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &911131083389420836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1514042887466428899}
+  m_Layer: 0
+  m_Name: bulletOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1514042887466428899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911131083389420836}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000016046359, y: -0.00000006827627, z: 0.99904823, w: 0.043619383}
+  m_LocalPosition: {x: 0.009127456, y: 0.0055018184, z: 0.10192537}
+  m_LocalScale: {x: 0.4140391, y: 0.4140391, z: 0.56487995}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6187711306746702561}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4184693882600464863
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,6 +43,7 @@ GameObject:
   - component: {fileID: 4816211834290169593}
   - component: {fileID: 195063957999724060}
   - component: {fileID: 1429789731162643586}
+  - component: {fileID: 8287451985627623395}
   m_Layer: 0
   m_Name: Q3Player
   m_TagString: Player
@@ -114,6 +146,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RefreshRate: 4
+--- !u!114 &8287451985627623395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4184693882600464863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ebf0deed011624db87326f24895c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScript: {fileID: 7361258499924921462}
+  pickupScript: {fileID: 4184693882600464863}
 --- !u!1 &5720127464572393641
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,9 +543,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4554884066831932358, guid: 90764528cf202a449becc79438c22b69,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1514042887466428899}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 90764528cf202a449becc79438c22b69,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8588210473618370512}
   m_SourcePrefab: {fileID: 100100000, guid: 90764528cf202a449becc79438c22b69, type: 3}
+--- !u!4 &6187711306746702561 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4554884066831932358, guid: 90764528cf202a449becc79438c22b69,
+    type: 3}
+  m_PrefabInstance: {fileID: 7703715349200679207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7361258499924921462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 90764528cf202a449becc79438c22b69,
+    type: 3}
+  m_PrefabInstance: {fileID: 7703715349200679207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8588210473618370512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361258499924921462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61450b840382280408b8198cb39880ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  range: 100
+  bulletCount: 300
+  origin: {fileID: 1514042887466428899}
 --- !u!4 &7882321027092043468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 90764528cf202a449becc79438c22b69,

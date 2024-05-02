@@ -16,8 +16,8 @@ public class pickup_handler : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if (other.tag=="Pickup"){
            var gunscr = weaponScript.GetComponent<shoot>();
-           var pickupscr=pickupScript.GetComponent<bullet_pickup>();
-           gunscr.bulletCount+=pickupscr.bulletAmmount;
+            gunscr.bulletCount += other.gameObject.GetComponent<bullet_pickup>().bulletAmmount;
+            Destroy(other.gameObject);
         }
     }
 }
