@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class shoot : MonoBehaviour
 {
-    public float damage=10f;
+    [SerializeField]
+    private GameObject currentHit; //get enemy object to reuse in other functions do not touch this
+    //VISUAL EFFECT VARIABLES ONLY
+    public Light weaponflash;
+    public float weaponvisualsfrequency = 0.5f; //How fast should the muzzle flash?
+
+    public int damage=13;
     public float range=100f;
     public int bulletCount=300;
 
@@ -28,17 +34,41 @@ public class shoot : MonoBehaviour
         }
     }
 
-    IEnumerator FireGun(){
+    IEnumerator FireGun()
+    {
         RaycastHit hit;
-
         yield return new WaitForSeconds(0.3f);
-            if(Physics.Raycast(origin.transform.position,origin.transform.forward, out hit, range)){
-                Debug.Log(hit.transform.name);
-                Debug.DrawLine(origin.transform.position,hit.point);
+
+        if (Physics.Raycast(origin.transform.position, origin.transform.forward, out hit, range))
+        {
+            Debug.Log(hit.transform.name);
+            Debug.DrawLine(origin.transform.position, hit.point);
+            if (hit.transform.gameObject.tag == "Enemy")
+            {
+                currentHit = hit.transform.gameObject;
+                DoDamage();
             }
-            bulletCount--;
-        yield return null;
         }
 
+        bulletCount--;
+        StartCoroutine(WeaponVisuals());
+        yield return null;
+    }
+
+    IEnumerator WeaponVisuals()
+    {
+        weaponflash.enabled = true;
+        yield return new WaitForSeconds(weaponvisualsfrequency);
+        weaponflash.enabled = false;
+        yield return null;
+    }
+
+    void DoDamage()
+    {
+        var enemyhp = currentHit.gameObject.GetComponent<EnemyHandler>();
+        enemyhp.Health-= damage;
+
+        print("Did damage");
+    }
 
     }
