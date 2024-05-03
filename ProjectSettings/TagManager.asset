@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pickup
+  - HealthPickup
+  - BulletPickup
+  - Enemy
   layers:
   - Default
   - TransparentFX
