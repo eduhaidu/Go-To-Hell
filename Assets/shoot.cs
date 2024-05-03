@@ -8,7 +8,7 @@ public class shoot : MonoBehaviour
     private GameObject currentHit; //get enemy object to reuse in other functions do not touch this
     //VISUAL EFFECT VARIABLES ONLY
     public Light weaponflash;
-    public float weaponvisualsfrequency = 0.5f; //How fast should the muzzle flash?
+    public float weaponvisualsfrequency = 0.2f; //How fast should the muzzle flash?
 
     public Vector3 BarrelRotationVector; // Your custom Vector3 representing desired rotation
     public float BarrelRotationSpeed = 1.0f;
@@ -30,10 +30,12 @@ public class shoot : MonoBehaviour
     {
         if(Input.GetMouseButton(0)){
             if(bulletCount>0){
+                StartCoroutine(WeaponVisuals());
                 StartCoroutine(FireGun());
                 RotateBarrel();
             }
-            else{
+            else
+            {
                 Debug.Log("Out of bullets");
             }
         }
@@ -56,13 +58,12 @@ public class shoot : MonoBehaviour
         }
 
         bulletCount--;
-        StartCoroutine(WeaponVisuals());
         yield return null;
     }
 
     IEnumerator WeaponVisuals()
     {
-        weaponflash.enabled = true;
+        weaponflash.enabled = !weaponflash.enabled;
         yield return new WaitForSeconds(weaponvisualsfrequency);
         weaponflash.enabled = false;
         yield return null;
