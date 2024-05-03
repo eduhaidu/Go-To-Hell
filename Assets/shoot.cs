@@ -10,6 +10,10 @@ public class shoot : MonoBehaviour
     public Light weaponflash;
     public float weaponvisualsfrequency = 0.5f; //How fast should the muzzle flash?
 
+    public Vector3 BarrelRotationVector; // Your custom Vector3 representing desired rotation
+    public float BarrelRotationSpeed = 1.0f;
+    public GameObject GunBarrel;
+
     public int damage=13;
     public float range=100f;
     public int bulletCount=300;
@@ -27,6 +31,7 @@ public class shoot : MonoBehaviour
         if(Input.GetMouseButton(0)){
             if(bulletCount>0){
                 StartCoroutine(FireGun());
+                RotateBarrel();
             }
             else{
                 Debug.Log("Out of bullets");
@@ -69,6 +74,14 @@ public class shoot : MonoBehaviour
         enemyhp.Health-= damage;
 
         print("Did damage");
+    }
+
+    void RotateBarrel()
+    {
+        //var zrot = GunBarrel.transform.rotation.z;
+
+        GunBarrel.transform.Rotate(Vector3.forward*BarrelRotationSpeed*Time.deltaTime);
+        Debug.Log("rotating barrel");
     }
 
     }
