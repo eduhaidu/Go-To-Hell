@@ -71,8 +71,8 @@ public class shoot : MonoBehaviour
 
     void DoDamage()
     {
-        var enemyhp = currentHit.gameObject.GetComponent<EnemyHandler>();
-        enemyhp.Health-= damage;
+        var enemyhp = currentHit.gameObject.GetComponent<EnemyAI>();
+        enemyhp.health-= damage;
 
         print("Did damage");
     }

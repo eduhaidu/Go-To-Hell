@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     private NavMeshAgent agent;
     public LayerMask WhatIsGround, WhatIsPlayer;
-   // public float health;
+    public float health = 100;
 
     //Patroling
     public Vector3 walkPoint;
@@ -25,6 +25,7 @@ public class EnemyAI : MonoBehaviour
     //Attacking
     public float timeBetweenAttacks;
     bool AlreadyAttacked;
+    bool isDead=false;
 
     //States
     public float sightRange, attackRange;
@@ -56,6 +57,10 @@ public class EnemyAI : MonoBehaviour
         if(playerInSightRange&&playerInAttackRange){
             Debug.Log("Player in attack range");
             AttackPlayer();
+        }
+        if(health<=0){
+            isDead=true;
+            Die();
         }
     }
 
@@ -97,7 +102,10 @@ public class EnemyAI : MonoBehaviour
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
 
-        transform.LookAt(player);
+        if(!isDead){
+            transform.LookAt(player);
+        }
+        
 
         if(!AlreadyAttacked){
 
@@ -118,6 +126,15 @@ public class EnemyAI : MonoBehaviour
             //Destroy(gameObject);
        // }
    // }
+
+    void Die(){
+        agent.enabled=false;
+        enemynavmesh.enabled=false;
+        transform.LookAt(null);
+        attackRange=0;
+        anima.SetBool("Die",true);
+        Debug.Log("Enemy killed");
+    }
 
     void OnDrawGizmosSelected(){
         Gizmos.color = Color.red;
