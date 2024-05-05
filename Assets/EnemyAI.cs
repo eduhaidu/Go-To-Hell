@@ -26,6 +26,7 @@ public class EnemyAI : MonoBehaviour
     public float timeBetweenAttacks;
     bool AlreadyAttacked;
     bool isDead=false;
+    //public float attackDist; //At what dist from player can it attack?
 
     //States
     public float sightRange, attackRange;
@@ -105,7 +106,7 @@ public class EnemyAI : MonoBehaviour
         if(!isDead){
             transform.LookAt(player);
         }
-        
+        anima.SetBool("Attack", true);
 
         if(!AlreadyAttacked){
 
