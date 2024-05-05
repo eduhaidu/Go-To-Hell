@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHandler : MonoBehaviour
 {
     public int Health = 100;
-
+    public Animator anima;
 
 
 
@@ -19,9 +19,9 @@ public class EnemyHandler : MonoBehaviour
 
     void Die()
     {
-        //Destroy object debug purpose
+        anima.SetBool("Die", true);
 
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
         Debug.Log("Enemy killed");
     }
 }

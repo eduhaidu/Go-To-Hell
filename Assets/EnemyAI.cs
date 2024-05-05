@@ -5,10 +5,17 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+    //ANIMATOR VARIABLES
+    public Animator anima; //The animator attached to the enemy
+
+    //Navmesh variables
+    public NavMeshAgent enemynavmesh;
+    public float ChaseSpeed = 1.0f;
+
     public Transform player;
     private NavMeshAgent agent;
     public LayerMask WhatIsGround, WhatIsPlayer;
-    public float health;
+   // public float health;
 
     //Patroling
     public Vector3 walkPoint;
@@ -27,6 +34,10 @@ public class EnemyAI : MonoBehaviour
     {
         player = GameObject.Find("Q3Player").transform;
         agent = GetComponent<NavMeshAgent>();
+
+        //Assign navmesh speed based on variable
+        enemynavmesh = GetComponent<NavMeshAgent>();
+        enemynavmesh.speed = ChaseSpeed;
     }
 
     void Update()
@@ -78,6 +89,8 @@ public class EnemyAI : MonoBehaviour
 
     void ChasePlayer(){
         agent.SetDestination(player.position);
+        //Change to RUN animation
+        anima.SetBool("isChasing", true);
     }
 
     void AttackPlayer(){
@@ -99,12 +112,12 @@ public class EnemyAI : MonoBehaviour
         AlreadyAttacked=false;
     }
 
-    public void TakeDamage(int damage){
-        health-=damage;
-        if (health<=0){
-            Destroy(gameObject);
-        }
-    }
+   // public void TakeDamage(int damage){
+      //  health-=damage;
+      //  if (health<=0){
+            //Destroy(gameObject);
+       // }
+   // }
 
     void OnDrawGizmosSelected(){
         Gizmos.color = Color.red;
