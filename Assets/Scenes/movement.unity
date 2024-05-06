@@ -5475,7 +5475,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 43696
+    surfaceParameter: 27348
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 3071576056645551380
@@ -6753,7 +6753,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 43854
+    surfaceParameter: 27386
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 5232773922501014023
@@ -14029,7 +14029,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 43870
+    surfaceParameter: 27424
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5665064175690010999
@@ -14107,6 +14107,11 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 2054417667}
+    - target: {fileID: 7687352474270599521, guid: fa06c71713f89a140ac43509f0a87f20,
+        type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14897,7 +14902,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 43870
+    surfaceParameter: 27424
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5665064175690010999

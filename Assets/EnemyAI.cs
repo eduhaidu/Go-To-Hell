@@ -126,13 +126,16 @@ public class EnemyAI : MonoBehaviour
 
     void ExecuteDie()
     {
-        Debug.Log("Execute die ");
-        var health_script = Player.GetComponent<player_health>();
-        health_script.Instadeath();
-        
-    }
+        if (playerInAttackRange)
+        {
+            Debug.Log("Execute die ");
+            var health_script = Player.GetComponent<player_health>();
+            health_script.Instadeath();
+        }
 
-    void ResetAttack(){
+        }
+
+        void ResetAttack(){
         AlreadyAttacked=false;
     }
 
