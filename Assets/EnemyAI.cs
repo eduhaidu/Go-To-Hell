@@ -105,8 +105,8 @@ public class EnemyAI : MonoBehaviour
 
         if(!isDead){
             transform.LookAt(player);
+            anima.SetBool("Attack", true);
         }
-        anima.SetBool("Attack", true);
 
         if(!AlreadyAttacked){
 
@@ -133,6 +133,7 @@ public class EnemyAI : MonoBehaviour
         enemynavmesh.enabled=false;
         transform.LookAt(null);
         attackRange=0;
+        this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         anima.SetBool("Die",true);
         Debug.Log("Enemy killed");
     }
