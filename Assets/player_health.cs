@@ -19,7 +19,7 @@ public class player_health : MonoBehaviour
         }
     }
 
-    void Instadeath()
+    public void Instadeath()
     {
         playerHealth = 0;
         PlayerCam.enabled = false;

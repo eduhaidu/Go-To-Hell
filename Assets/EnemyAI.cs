@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+    public GameObject Player;
     //ANIMATOR VARIABLES
     public Animator anima; //The animator attached to the enemy
 
@@ -16,7 +17,7 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent agent;
     public LayerMask WhatIsGround, WhatIsPlayer;
     public float health = 100;
-
+    public int enemyDamage=10;
     //Patroling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -57,7 +58,7 @@ public class EnemyAI : MonoBehaviour
         }
         if(playerInSightRange&&playerInAttackRange){
             Debug.Log("Player in attack range");
-            AttackPlayer();
+            //AttackPlayer();
         }
         if(health<=0){
             isDead=true;
@@ -100,22 +101,26 @@ public class EnemyAI : MonoBehaviour
     }
 
     void AttackPlayer(){
+        Debug.Log("Enemy is attacking");
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
 
         if(!isDead){
             transform.LookAt(player);
             anima.SetBool("Attack", true);
+            var health_script=Player.GetComponent<player_health>();
+            health_script.Instadeath();
         }
 
-        if(!AlreadyAttacked){
+        
+        // if(!AlreadyAttacked){
 
-            //Logica pentru a da cu mainile in player
+        //     //Logica pentru a da cu mainile in player
+            
 
-
-            AlreadyAttacked=true;
-            Invoke(nameof(ResetAttack),timeBetweenAttacks);
-        }
+        //     AlreadyAttacked=true;
+        //     Invoke(nameof(ResetAttack),timeBetweenAttacks);
+        // }
     }
     void ResetAttack(){
         AlreadyAttacked=false;
