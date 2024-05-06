@@ -53,12 +53,12 @@ public class EnemyAI : MonoBehaviour
             Patroling();
         }
         if(playerInSightRange && !playerInAttackRange){
-            Debug.Log("Player in sight range");
+           // Debug.Log("Player in sight range");
             ChasePlayer();
         }
         if(playerInSightRange&&playerInAttackRange){
-            Debug.Log("Player in attack range");
-            //AttackPlayer();
+            //Debug.Log("Player in attack range");
+            AttackPlayer();
         }
         if(health<=0){
             isDead=true;
@@ -100,28 +100,38 @@ public class EnemyAI : MonoBehaviour
         anima.SetBool("isChasing", true);
     }
 
-    void AttackPlayer(){
-        Debug.Log("Enemy is attacking");
+    void AttackPlayer()
+    {
+        //Debug.Log("Enemy is attacking");
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
 
-        if(!isDead){
+        if (!isDead)
+        {
             transform.LookAt(player);
             anima.SetBool("Attack", true);
-            var health_script=Player.GetComponent<player_health>();
-            health_script.Instadeath();
+            //var health_script = Player.GetComponent<player_health>();
+           //health_script.Instadeath();
         }
 
-        
         // if(!AlreadyAttacked){
 
         //     //Logica pentru a da cu mainile in player
-            
+
 
         //     AlreadyAttacked=true;
         //     Invoke(nameof(ResetAttack),timeBetweenAttacks);
         // }
     }
+
+    void ExecuteDie()
+    {
+        Debug.Log("Execute die ");
+        var health_script = Player.GetComponent<player_health>();
+        health_script.Instadeath();
+        
+    }
+
     void ResetAttack(){
         AlreadyAttacked=false;
     }

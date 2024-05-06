@@ -57,8 +57,8 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.724387
-        functionName: AttackPlayer
+      - time: 0.33246073
+        functionName: ExecuteDie
         data: 
         objectReferenceParameter: {fileID: 4929905840821626890, guid: fa06c71713f89a140ac43509f0a87f20,
           type: 3}
