@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
 
     //Attacking
     public float timeBetweenAttacks;
-    bool AlreadyAttacked;
+
     bool isDead=false;
     //public float attackDist; //At what dist from player can it attack?
 
@@ -98,7 +98,7 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(player.position);
         //Change to RUN animation
         anima.SetBool("isChasing", true);
-       
+        anima.SetBool("Attack",false);
     }
 
    
@@ -137,10 +137,6 @@ public class EnemyAI : MonoBehaviour
         }
 
         }
-
-        void ResetAttack(){
-        AlreadyAttacked=false;
-    }
 
    // public void TakeDamage(int damage){
       //  health-=damage;
