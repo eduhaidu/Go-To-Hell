@@ -98,8 +98,10 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(player.position);
         //Change to RUN animation
         anima.SetBool("isChasing", true);
+       
     }
 
+   
     void AttackPlayer()
     {
         //Debug.Log("Enemy is attacking");
@@ -131,6 +133,7 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("Execute die ");
             var health_script = Player.GetComponent<player_health>();
             health_script.Instadeath();
+            anima.SetBool("Attack", false);
         }
 
         }
