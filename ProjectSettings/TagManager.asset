@@ -9,6 +9,7 @@ TagManager:
   - BulletPickup
   - Enemy
   - DeathZone
+  - concrete
   layers:
   - Default
   - TransparentFX
