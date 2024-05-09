@@ -3,7 +3,13 @@ guid: b41723c74c1f9c1409c8b5c9dc1a87c1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audioSource: {instanceID: 0}
+  - grass: {fileID: 8300000, guid: 980cbfdac9146f840b01abb7687141cf, type: 3}
+  - concrete: {fileID: 8300000, guid: 75f1cf9f06b451b419c3802f50de623d, type: 3}
+  - wood: {fileID: 8300000, guid: 413fac6729c3a7f49ac90d73b0c4389b, type: 3}
+  - dirt: {fileID: 8300000, guid: 613699260315eec46b6d0f767054b482, type: 3}
+  - rayStart: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

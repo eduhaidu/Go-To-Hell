@@ -306,8 +306,8 @@ MonoBehaviour:
   concrete: {fileID: 8300000, guid: 75f1cf9f06b451b419c3802f50de623d, type: 3}
   wood: {fileID: 8300000, guid: 413fac6729c3a7f49ac90d73b0c4389b, type: 3}
   dirt: {fileID: 8300000, guid: 613699260315eec46b6d0f767054b482, type: 3}
-  RayStart: {fileID: 134511314918765600}
-  range: 500
+  rayStart: {fileID: 134511314918765600}
+  range: 50
   layerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -471,7 +471,6 @@ GameObject:
   - component: {fileID: 8476635575410739807}
   - component: {fileID: 5379100710856761397}
   - component: {fileID: 2638198996485630972}
-  - component: {fileID: 662689715908537170}
   - component: {fileID: 6590455813918400188}
   m_Layer: 0
   m_Name: Camera
@@ -549,14 +548,6 @@ Camera:
   m_StereoSeparation: 0.022
 --- !u!124 &2638198996485630972
 Behaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5720127464572393641}
-  m_Enabled: 1
---- !u!81 &662689715908537170
-AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}

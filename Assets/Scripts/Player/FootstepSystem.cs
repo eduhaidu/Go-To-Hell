@@ -71,8 +71,11 @@ public class FootstepSystem : MonoBehaviour
                 if (footstepSound != null)
                     PlayFootstepSound(footstepSound);
             }
+            else{
+                audioSource.Stop();
+            }
 
-            yield return new WaitForSeconds(0.5f); // Adjust as needed
+            yield return new WaitForSeconds(1f); // Adjust as needed
         }
 
         isPlayingFootstep = false;

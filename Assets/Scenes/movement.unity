@@ -2353,6 +2353,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2640582077757074175, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
+      propertyPath: range
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640582077757074175, guid: b0e0ce50c4410214f80cb45dced7091d,
+        type: 3}
       propertyPath: rayStart
       value: 
       objectReference: {fileID: 1280160080}
@@ -2411,8 +2416,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 662689715908537170, guid: b0e0ce50c4410214f80cb45dced7091d, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5514,7 +5518,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27382
+    surfaceParameter: 27390
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 3071576056645551380
@@ -6971,7 +6975,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27438
+    surfaceParameter: 27448
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 5232773922501014023
@@ -14516,7 +14520,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27478
+    surfaceParameter: 27488
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5665064175690010999
@@ -15392,7 +15396,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27478
+    surfaceParameter: 27488
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5665064175690010999
