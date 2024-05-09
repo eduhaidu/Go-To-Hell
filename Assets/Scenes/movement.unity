@@ -2266,41 +2266,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2640582077757074175, guid: b0e0ce50c4410214f80cb45dced7091d,
-        type: 3}
-      propertyPath: dirt
-      value: 
-      objectReference: {fileID: 8300000, guid: 613699260315eec46b6d0f767054b482, type: 3}
-    - target: {fileID: 2640582077757074175, guid: b0e0ce50c4410214f80cb45dced7091d,
-        type: 3}
-      propertyPath: wood
-      value: 
-      objectReference: {fileID: 8300000, guid: 413fac6729c3a7f49ac90d73b0c4389b, type: 3}
-    - target: {fileID: 2640582077757074175, guid: b0e0ce50c4410214f80cb45dced7091d,
-        type: 3}
-      propertyPath: grass
-      value: 
-      objectReference: {fileID: 8300000, guid: 980cbfdac9146f840b01abb7687141cf, type: 3}
-    - target: {fileID: 2640582077757074175, guid: b0e0ce50c4410214f80cb45dced7091d,
-        type: 3}
-      propertyPath: range
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 2640582077757074175, guid: b0e0ce50c4410214f80cb45dced7091d,
-        type: 3}
-      propertyPath: RayStart
-      value: 
-      objectReference: {fileID: 1304107378}
-    - target: {fileID: 2640582077757074175, guid: b0e0ce50c4410214f80cb45dced7091d,
-        type: 3}
-      propertyPath: concrete
-      value: 
-      objectReference: {fileID: 8300000, guid: 75f1cf9f06b451b419c3802f50de623d, type: 3}
-    - target: {fileID: 2640582077757074175, guid: b0e0ce50c4410214f80cb45dced7091d,
-        type: 3}
-      propertyPath: layerMask.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 4184693882600464863, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
       propertyPath: m_Name
@@ -4701,9 +4666,9 @@ GameObject:
   m_Component:
   - component: {fileID: 753445921}
   - component: {fileID: 753445920}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NavMesh Surface
-  m_TagString: Untagged
+  m_TagString: concrete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5460,7 +5425,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27350
+    surfaceParameter: 27352
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 3071576056645551380
@@ -6774,7 +6739,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27390
+    surfaceParameter: 27392
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 5232773922501014023
@@ -7901,12 +7866,6 @@ MonoBehaviour:
     - EdgeIndices: 14000000150000001600000017000000
       TexGenIndex: 5
     Generation: 394
---- !u!4 &1304107378 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 134511314918765600, guid: b0e0ce50c4410214f80cb45dced7091d,
-    type: 3}
-  m_PrefabInstance: {fileID: 326344221}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1317419119
 GameObject:
   m_ObjectHideFlags: 0
@@ -14261,7 +14220,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27428
+    surfaceParameter: 27430
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5665064175690010999
@@ -15137,7 +15096,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27428
+    surfaceParameter: 27430
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5665064175690010999
