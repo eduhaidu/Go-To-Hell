@@ -33,62 +33,42 @@ public class FootStepsFinal : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Grounded = false;
+        isWalking = false;
     }
 
     void Update()
     {
-        string key = "";  // Initialize key as an empty string
-
-        switch (Input.GetKey(KeyCode.A) ? "A" : (Input.GetKey(KeyCode.D) ? "D" : (Input.GetKey(KeyCode.W) ? "W" : (Input.GetKey(KeyCode.S) ? "S" : ""))))
-        {
-            case "W":
-                // Move forward logic
-                isWalking = true;
-                break;
-            case "A":
-                isWalking = true;
-                // Move left logic
-                break;
-            case "S":
-                isWalking = true;
-                // Move backward logic (optional)
-                break;
-            case "D":
-                isWalking = true;
-                // Move right logic
-                break;
-            default:
-                isWalking = false;
-                // No keys pressed (optional)
-                break;
+        bool wasWalking = isWalking;
+        if(Grounded){
+            isWalking = Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.S);
         }
-
-        if (isWalking && Grounded)
-        {
-            stepsound = true;
+        else{
+            isWalking = false;
+        }
+        if (isWalking && Grounded && !wasWalking){
+            stepsound=true;
             StartCoroutine(ExecuteSteps());
         }
-        else
-        {
+        else if (!isWalking&&isStepping){
             stepsound = false;
-            // Stop any currently running footstep coroutine
-            if (isStepping)
-            {
-                StopCoroutine(ExecuteSteps());
-                isStepping = false;
-            }
-        }
-    }
-        IEnumerator ExecuteSteps()
-    {
-        if (!isStepping) // Only play if not already playing
-        {
-            isStepping = true;
-            yield return new WaitForSeconds(stepInterval);
-            source.PlayOneShot(StepSound, 1.0f);
+            //Stop any currently running footstep coroutine
+            StopCoroutine(ExecuteSteps());
             isStepping = false;
         }
-        yield return null;
+    }
+
+    IEnumerator ExecuteSteps(){
+        while(isWalking&&Grounded){
+            if(!isStepping){
+                isStepping = true;
+                source.PlayOneShot(StepSound,1.0f);
+                yield return new WaitForSeconds(stepInterval);
+                isStepping = false;
+            }
+            else{
+                yield return null;
+            }
+        }
     }
 }
 
