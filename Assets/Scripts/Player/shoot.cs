@@ -17,6 +17,7 @@ public class shoot : MonoBehaviour
     public int damage=13;
     public float range=100f;
     public int bulletCount=300;
+    public int rocketCount = 3;
 
     public Transform origin;
     // Start is called before the first frame update

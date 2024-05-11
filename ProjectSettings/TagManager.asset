@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - DeathZone
   - concrete
+  - RocketPickup
   layers:
   - Default
   - TransparentFX

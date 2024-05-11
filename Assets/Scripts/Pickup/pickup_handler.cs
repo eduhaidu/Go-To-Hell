@@ -29,5 +29,13 @@ public class pickup_handler : MonoBehaviour
             AudioSource.PlayClipAtPoint(healthPickupSound,player.position);
             Destroy(other.gameObject);
         }
+
+        if (other.tag == "RocketPickup")
+        {
+            weaponScript.GetComponent<shoot>().rocketCount++;
+            Destroy(other.gameObject);
+            print("picket up rocket");
+            AudioSource.PlayClipAtPoint(bulletPickupSound, player.position);
+        }
     }
 }
