@@ -19,11 +19,29 @@ public class shoot : MonoBehaviour
     public int bulletCount=300;
     public int rocketCount = 3;
 
+    public AudioSource WeaponSoundSource;
+    public AudioClip MachineGunSound;
+
     public Transform origin;
     // Start is called before the first frame update
     void Start()
     {
 
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (bulletCount > 0)
+            {
+                WeaponSoundSource.PlayOneShot(MachineGunSound);
+            }
+        }
+            if (Input.GetMouseButtonUp(0)){
+
+            WeaponSoundSource.Stop();
+        }
     }
 
     // Update is called once per frame
@@ -37,9 +55,11 @@ public class shoot : MonoBehaviour
             }
             else
             {
+                WeaponSoundSource.Stop();
                 Debug.Log("Out of bullets");
             }
         }
+       
     }
 
     IEnumerator FireGun()
