@@ -12,12 +12,15 @@ public class RLauncher : MonoBehaviour
 
     public GameObject WeaponScriptHolder; //references the shoot script that holds count of rockets
 
+    public AudioSource RocketLauncherSource;
+    public AudioClip RocketLauncherSound;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(1))
         {
             instantiateRocket();
-
+           
             //Take one rocket away from rocket script
             var weaponscr = WeaponScriptHolder.GetComponent<shoot>();
             if (weaponscr.rocketCount > 0)
@@ -32,6 +35,7 @@ public class RLauncher : MonoBehaviour
         {
             if (WeaponScriptHolder.GetComponent<shoot>().rocketCount > 0)
             {
+            RocketLauncherSource.PlayOneShot(RocketLauncherSound);
                 var rocket = Instantiate(RocketPrefab, RocketSpawn.position, Quaternion.identity);
 
                 rocket.transform.forward = RocketSpawn.forward; // Set forward direction (optional)
