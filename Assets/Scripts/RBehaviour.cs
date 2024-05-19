@@ -9,15 +9,32 @@ public class RBehaviour : MonoBehaviour
     public AudioSource RocketExplosionSource;
     public AudioClip RocketExplosionSound;
 
+    public bool hasExploded = false;
+
     private void OnCollisionEnter(Collision collision)
     {
-        print("Collided with " + collision.transform.gameObject.name);
-        var boom = Instantiate(RocketExplosionPrefab, transform.position, Quaternion.identity); //DO NOT FUCKING TOUCH THIS 
-        print("Playing boom");
-        RocketExplosionSource.PlayOneShot(RocketExplosionSound);
-        StartCoroutine(doBoom());
+        if(!hasExploded){
+            print("Collided with " + collision.transform.gameObject.name);
+            var boom = Instantiate(RocketExplosionPrefab, transform.position, Quaternion.identity); //DO NOT FUCKING TOUCH THIS 
+            print("Playing boom");
+            RocketExplosionSource.PlayOneShot(RocketExplosionSound);  
+            gameObject.GetComponent<Renderer>().enabled = false;
+            StartCoroutine(doBoom());
+            hasExploded = true;
+            StartCoroutine(cleanExplosion());
         // Destroy(gameObject);
         // Destroy(gameObject);
+        }
+        
+    }
+
+    IEnumerator cleanExplosion(){
+        while(true){
+            yield return new WaitForSeconds(3.0f);
+            GameObject exp = GameObject.Find("P_RocketExplosion(Clone)");
+            Destroy(exp);
+        }
+        
     }
 
     IEnumerator doBoom()
