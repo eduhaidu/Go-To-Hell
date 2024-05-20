@@ -6826,7 +6826,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27396
+    surfaceParameter: 43870
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 3071576056645551380
@@ -8043,7 +8043,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27456
+    surfaceParameter: 44100
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 5232773922501014023
@@ -16626,7 +16626,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27514
+    surfaceParameter: 44132
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5665064175690010999
@@ -17584,7 +17584,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27514
+    surfaceParameter: 44132
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5665064175690010999
@@ -18651,7 +18651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RocketPrefab: {fileID: 344161830493911902, guid: 993f88bacba29d14a8251b768adee95b,
     type: 3}
-  RocketSpeed: 35
+  RocketSpeed: 25
   RocketSpawn: {fileID: 653311313}
   RocketOrientation: {fileID: 0}
   WeaponScriptHolder: {fileID: 2137953140}
