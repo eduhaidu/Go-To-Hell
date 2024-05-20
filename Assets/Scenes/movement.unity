@@ -3049,6 +3049,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 195063957999724060, guid: b0e0ce50c4410214f80cb45dced7091d,
+        type: 3}
+      propertyPath: m_JumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a77e0aeb650e6f549abcb6ef5d0d45d8, type: 3}
+    - target: {fileID: 195063957999724060, guid: b0e0ce50c4410214f80cb45dced7091d,
+        type: 3}
+      propertyPath: m_AudioSource
+      value: 
+      objectReference: {fileID: 1543738134}
     - target: {fileID: 4184693882600464863, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
       propertyPath: m_Name
@@ -6826,7 +6836,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 43870
+    surfaceParameter: 27396
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 3071576056645551380
@@ -8043,7 +8053,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 44100
+    surfaceParameter: 27458
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 5232773922501014023
@@ -12224,6 +12234,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4c12dedb9ee02e34d830e132ecfb66c0,
     type: 3}
   m_PrefabInstance: {fileID: 1494699999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1543738134 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5594637721325638528, guid: b0e0ce50c4410214f80cb45dced7091d,
+    type: 3}
+  m_PrefabInstance: {fileID: 326344221}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &1548281346
 Mesh:
@@ -16626,7 +16642,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 44132
+    surfaceParameter: 27516
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5665064175690010999
@@ -17584,7 +17600,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 44132
+    surfaceParameter: 27516
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5665064175690010999

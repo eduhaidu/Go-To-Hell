@@ -2,9 +2,6 @@
 
 namespace Q3Movement
 {
-    /// <summary>
-    /// This script handles Quake III CPM(A) mod style player movement logic.
-    /// </summary>
     [RequireComponent(typeof(CharacterController))]
     public class Q3PlayerController : MonoBehaviour
     {
@@ -39,19 +36,17 @@ namespace Q3Movement
         [SerializeField] private MovementSettings m_AirSettings = new MovementSettings(7, 2, 2);
         [SerializeField] private MovementSettings m_StrafeSettings = new MovementSettings(1, 50, 50);
 
-        /// <summary>
-        /// Returns player's current speed.
-        /// </summary>
+        [Header("Audio")]
+        [SerializeField] private AudioSource m_AudioSource;
+        [SerializeField] private AudioClip m_JumpSound;
+
         public float Speed { get { return m_Character.velocity.magnitude; } }
 
         private CharacterController m_Character;
         private Vector3 m_MoveDirectionNorm = Vector3.zero;
         private Vector3 m_PlayerVelocity = Vector3.zero;
 
-        // Used to queue the next jump just before hitting the ground.
         private bool m_JumpQueued = false;
-
-        // Used to display real time friction values.
         private float m_PlayerFriction = 0;
 
         private Vector3 m_MoveInput;
@@ -73,10 +68,9 @@ namespace Q3Movement
         private void Update()
         {
             m_MoveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-            m_MouseLook.UpdateCursorLock();    
+            m_MouseLook.UpdateCursorLock();
             QueueJump();
 
-            // Set movement state.
             if (m_Character.isGrounded)
             {
                 GroundMove();
@@ -86,14 +80,10 @@ namespace Q3Movement
                 AirMove();
             }
 
-            // Rotate the character and camera.
             m_MouseLook.LookRotation(m_Tran, m_CamTran);
-
-            // Move the character.
             m_Character.Move(m_PlayerVelocity * Time.deltaTime);
         }
 
-        // Queues the next jump.
         private void QueueJump()
         {
             if (m_AutoBunnyHop)
@@ -113,7 +103,6 @@ namespace Q3Movement
             }
         }
 
-        // Handle air movement.
         private void AirMove()
         {
             float accel;
@@ -127,7 +116,6 @@ namespace Q3Movement
             wishdir.Normalize();
             m_MoveDirectionNorm = wishdir;
 
-            // CPM Air control.
             float wishspeed2 = wishspeed;
             if (Vector3.Dot(m_PlayerVelocity, wishdir) < 0)
             {
@@ -138,7 +126,6 @@ namespace Q3Movement
                 accel = m_AirSettings.Acceleration;
             }
 
-            // If the player is ONLY strafing left or right
             if (m_MoveInput.z == 0 && m_MoveInput.x != 0)
             {
                 if (wishspeed > m_StrafeSettings.MaxSpeed)
@@ -155,15 +142,11 @@ namespace Q3Movement
                 AirControl(wishdir, wishspeed2);
             }
 
-            // Apply gravity
             m_PlayerVelocity.y -= m_Gravity * Time.deltaTime;
         }
 
-        // Air control occurs when the player is in the air, it allows players to move side 
-        // to side much faster rather than being 'sluggish' when it comes to cornering.
         private void AirControl(Vector3 targetDir, float targetSpeed)
         {
-            // Only control air movement when moving forward or backward.
             if (Mathf.Abs(m_MoveInput.z) < 0.001 || Mathf.Abs(targetSpeed) < 0.001)
             {
                 return;
@@ -171,7 +154,6 @@ namespace Q3Movement
 
             float zSpeed = m_PlayerVelocity.y;
             m_PlayerVelocity.y = 0;
-            /* Next two lines are equivalent to idTech's VectorNormalize() */
             float speed = m_PlayerVelocity.magnitude;
             m_PlayerVelocity.Normalize();
 
@@ -179,7 +161,6 @@ namespace Q3Movement
             float k = 32;
             k *= m_AirControl * dot * dot * Time.deltaTime;
 
-            // Change direction while slowing down.
             if (dot > 0)
             {
                 m_PlayerVelocity.x *= speed + targetDir.x * k;
@@ -191,14 +172,12 @@ namespace Q3Movement
             }
 
             m_PlayerVelocity.x *= speed;
-            m_PlayerVelocity.y = zSpeed; // Note this line
+            m_PlayerVelocity.y = zSpeed;
             m_PlayerVelocity.z *= speed;
         }
 
-        // Handle ground movement.
         private void GroundMove()
         {
-            // Do not apply friction if the player is queueing up the next jump
             if (!m_JumpQueued)
             {
                 ApplyFriction(1.0f);
@@ -218,25 +197,28 @@ namespace Q3Movement
 
             Accelerate(wishdir, wishspeed, m_GroundSettings.Acceleration);
 
-            // Reset the gravity velocity
             m_PlayerVelocity.y = -m_Gravity * Time.deltaTime;
 
             if (m_JumpQueued)
             {
                 m_PlayerVelocity.y = m_JumpForce;
                 m_JumpQueued = false;
+
+                // Play jump sound
+                if (m_JumpSound != null && m_AudioSource != null)
+                {
+                    m_AudioSource.PlayOneShot(m_JumpSound);
+                }
             }
         }
 
         private void ApplyFriction(float t)
         {
-            // Equivalent to VectorCopy();
-            Vector3 vec = m_PlayerVelocity; 
+            Vector3 vec = m_PlayerVelocity;
             vec.y = 0;
             float speed = vec.magnitude;
             float drop = 0;
 
-            // Only apply friction when grounded.
             if (m_Character.isGrounded)
             {
                 float control = speed < m_GroundSettings.Deceleration ? m_GroundSettings.Deceleration : speed;
@@ -256,11 +238,9 @@ namespace Q3Movement
             }
 
             m_PlayerVelocity.x *= newSpeed;
-            // playerVelocity.y *= newSpeed;
             m_PlayerVelocity.z *= newSpeed;
         }
 
-        // Calculates acceleration based on desired speed and direction.
         private void Accelerate(Vector3 targetDir, float targetSpeed, float accel)
         {
             float currentspeed = Vector3.Dot(m_PlayerVelocity, targetDir);
