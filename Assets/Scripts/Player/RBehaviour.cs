@@ -11,12 +11,18 @@ public class RBehaviour : MonoBehaviour
 
     public bool hasExploded = false;
 
+    public GameObject RadiusDamageScript;
+
     private void OnCollisionEnter(Collision collision)
     {
         if(!hasExploded){
             print("Collided with " + collision.transform.gameObject.name);
+            //Create Damage Radius
+            RadiusDamageScript.SetActive(true);
+
             var boom = Instantiate(RocketExplosionPrefab, transform.position, Quaternion.identity); //DO NOT FUCKING TOUCH THIS 
             print("Playing boom");
+
             RocketExplosionSource.PlayOneShot(RocketExplosionSound);  
             gameObject.GetComponent<Renderer>().enabled = false;
             StartCoroutine(doBoom());
