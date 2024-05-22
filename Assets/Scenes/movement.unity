@@ -3114,6 +3114,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8287451985627623395, guid: b0e0ce50c4410214f80cb45dced7091d,
+        type: 3}
+      propertyPath: healthPickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 54759e71134c1914a9a6e0c58401af66, type: 3}
     - target: {fileID: 8588210473618370512, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
       propertyPath: MachineGunSound
@@ -6836,7 +6841,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27396
+    surfaceParameter: 43874
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 3071576056645551380
@@ -8053,7 +8058,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27458
+    surfaceParameter: 44104
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 5232773922501014023
@@ -16642,7 +16647,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27516
+    surfaceParameter: 44136
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5665064175690010999
@@ -17600,7 +17605,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27516
+    surfaceParameter: 44136
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5665064175690010999
@@ -19128,6 +19133,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 818158559218910820, guid: 5553ae17066e30941bba1dc7505bf761,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 54759e71134c1914a9a6e0c58401af66, type: 3}
     - target: {fileID: 1200113622540103698, guid: 5553ae17066e30941bba1dc7505bf761,
         type: 3}
       propertyPath: m_Name
