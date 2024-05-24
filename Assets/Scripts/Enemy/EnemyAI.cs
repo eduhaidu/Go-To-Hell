@@ -17,7 +17,7 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent agent;
     public LayerMask WhatIsGround, WhatIsPlayer;
     public float health = 100;
-    public int enemyDamage=10;
+    public int enemyDamage=60;
     //Patroling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -132,7 +132,10 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.Log("Execute die ");
             var health_script = Player.GetComponent<player_health>();
-            health_script.Instadeath();
+            health_script.playerHealth-=enemyDamage;
+            if(health_script.playerHealth<=0){
+                health_script.PlayerDeath();
+            }
             anima.SetBool("Attack", false);
         }
 

@@ -8571,7 +8571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &753445920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11127,7 +11127,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 44118
+    surfaceParameter: 27460
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: -3342820574331453260
@@ -11524,7 +11524,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 44150
+    surfaceParameter: 27520
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -1404256905368844665
@@ -27141,7 +27141,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 43880
+    surfaceParameter: 27398
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 6825692864360323767
@@ -28621,7 +28621,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 44150
+    surfaceParameter: 27520
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -1404256905368844665
@@ -30304,6 +30304,11 @@ PrefabInstance:
         type: 3}
       propertyPath: attackRange
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7687352474270599521, guid: fa06c71713f89a140ac43509f0a87f20,
+        type: 3}
+      propertyPath: enemyDamage
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7830254071300495659, guid: fa06c71713f89a140ac43509f0a87f20,
         type: 3}

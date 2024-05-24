@@ -15,16 +15,15 @@ public class player_health : MonoBehaviour
     {
         if (other.gameObject.tag == "DeathZone")
         {
-            Instadeath();
+            PlayerDeath();
         }
     }
 
-    public void Instadeath()
+    public void PlayerDeath()
     {
         playerHealth = 0;
         PlayerCam.enabled = false;
         Instantiate(DeathCam,PlayerCam.transform.position, Quaternion.identity);
         Destroy(PlayerPrefab);
-
     }
 }
