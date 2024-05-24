@@ -8,6 +8,7 @@ public class shoot : MonoBehaviour
     private GameObject currentHit; //get enemy object to reuse in other functions do not touch this
     //VISUAL EFFECT VARIABLES ONLY
     public Light weaponflash;
+    public ParticleSystem MuzzleParticles;
     public float weaponvisualsfrequency = 0.2f; //How fast should the muzzle flash?
 
     public Vector3 BarrelRotationVector; // Your custom Vector3 representing desired rotation
@@ -36,12 +37,14 @@ public class shoot : MonoBehaviour
             if (bulletCount > 0)
             {
                 WeaponSoundSource.PlayOneShot(MachineGunSound);
+                MuzzleParticles.Play();
             }
         }
             if (Input.GetMouseButtonUp(0)){
-
             WeaponSoundSource.Stop();
+            MuzzleParticles.Stop();
         }
+
     }
 
     // Update is called once per frame
@@ -57,6 +60,7 @@ public class shoot : MonoBehaviour
             {
                 WeaponSoundSource.Stop();
                 Debug.Log("Out of bullets");
+                MuzzleParticles.Stop();
             }
         }
        
