@@ -36,7 +36,9 @@ public class shoot : MonoBehaviour
         {
             if (bulletCount > 0)
             {
-                WeaponSoundSource.PlayOneShot(MachineGunSound);
+                if(!WeaponSoundSource.isPlaying){
+                   WeaponSoundSource.Play();
+                }
                 MuzzleParticles.Play();
             }
             else{
