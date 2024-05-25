@@ -39,6 +39,9 @@ public class shoot : MonoBehaviour
                 WeaponSoundSource.PlayOneShot(MachineGunSound);
                 MuzzleParticles.Play();
             }
+            else{
+                MuzzleParticles.Stop();
+            }
         }
             if (Input.GetMouseButtonUp(0)){
             WeaponSoundSource.Stop();
