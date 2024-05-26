@@ -21,6 +21,8 @@ Shader "Retro/QuakeSkybox" // Defines a shader named "Retro/QuakeSkybox"
         _GradientColor2("Gradient Color 2", Color) = (0, 1, 0, 1) // Second gradient color
         _GradientColor3("Gradient Color 3", Color) = (0, 0, 1, 1) // Third gradient color
         _GradientIntensity("Gradient Intensity", Range(0, 1)) = 0.5 // Intensity of the gradient effect
+        _StarDensity("Star Density", Float) = 0.02 // Density of the stars
+        _StarBrightness("Star Brightness", Float) = 1.0 // Brightness of the stars
     }
     SubShader
     {
@@ -76,6 +78,8 @@ Shader "Retro/QuakeSkybox" // Defines a shader named "Retro/QuakeSkybox"
             fixed4 _GradientColor2; // Second gradient color
             fixed4 _GradientColor3; // Third gradient color
             float _GradientIntensity; // Gradient intensity
+            float _StarDensity; // Density of the stars
+            float _StarBrightness; // Brightness of the stars
 
             // Dithering function
             float dither(float2 position, float value)
@@ -85,11 +89,10 @@ Shader "Retro/QuakeSkybox" // Defines a shader named "Retro/QuakeSkybox"
                 return step(threshold, value); // Return dithering result
             }
 
-            // Simple animated noise function
-            float noise(float2 uv, float time)
+            // Simple noise function (without time component)
+            float noise(float2 uv)
             {
-                float3 uvw = float3(uv, time * _NoiseSpeed); // Calculate UVW coordinates
-                return frac(sin(dot(uvw, float3(12.9898, 78.233, 45.164))) * 43758.5453); // Return noise value
+                return frac(sin(dot(uv, float2(12.9898, 78.233))) * 43758.5453); // Return noise value
             }
 
             // Function to calculate the gradient color
@@ -106,6 +109,19 @@ Shader "Retro/QuakeSkybox" // Defines a shader named "Retro/QuakeSkybox"
                     float t = (height - 0.5) * 2.0; // Calculate interpolation factor for second blend
                     return lerp(_GradientColor2, _GradientColor3, t); // Return blended color
                 }
+            }
+
+            // Function to calculate procedural stars
+            fixed4 calculateStars(float3 dir)
+            {
+                float2 starUV = dir.xy * 100.0; // Use dir.xy to ensure star pattern moves with view direction
+                float starValue = noise(starUV); // Generate a noise value for star density
+                if (starValue < _StarDensity)
+                {
+                    float starBrightness = noise(starUV * 2.0) * _StarBrightness; // Generate star brightness
+                    return fixed4(starBrightness, starBrightness, starBrightness, 1.0); // Return star color
+                }
+                return fixed4(0, 0, 0, 0); // Return transparent color if no star
             }
 
             // Fragment shader function
@@ -141,13 +157,18 @@ Shader "Retro/QuakeSkybox" // Defines a shader named "Retro/QuakeSkybox"
 
                 // Apply animated noise effect
                 float2 noiseUV = float2(i.worldView.x, i.worldView.z) * _NoiseScale;
-                float noiseValue = noise(noiseUV, _Time.y);
+                noiseUV += _Time * _NoiseSpeed; // Add time component to noise UV
+                float noiseValue = noise(noiseUV);
                 col.rgb = lerp(col.rgb, col.rgb * noiseValue, _NoiseIntensity);
 
                 // Apply gradient
                 float height = dir.y * 0.5 + 0.5;  // Map y to [0, 1]
                 fixed4 gradientCol = calculateGradient(height);
                 col.rgb = lerp(col.rgb, gradientCol.rgb, _GradientIntensity);
+
+                // Calculate and apply stars
+                fixed4 starCol = calculateStars(dir);
+                col.rgb = max(col.rgb, starCol.rgb); // Blend star color with existing color
 
                 return col; // Return final color
             }
