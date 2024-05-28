@@ -86,6 +86,7 @@ Material:
     - _MainTexSpeed: 0.7
     - _Metallic: 0
     - _Mode: 0
+    - _MoonSize: 0.78
     - _NoiseIntensity: 0.433
     - _NoiseScale: 0.1
     - _NoiseSpeed: 1
@@ -94,13 +95,16 @@ Material:
     - _Parallax: 0.02
     - _RandomSizeVariation: 0.2
     - _SecondaryTexSpeed: 0.3
+    - _ShowSun: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SphereSize: 10
     - _SrcBlend: 1
-    - _StarBrightness: 0.39
+    - _StarBrightness: 0.35
     - _StarDensity: 0.001
     - _StarSize: 0.1
+    - _SunSize: 0.03
+    - _TimeOfDay: 0.076
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
@@ -111,4 +115,6 @@ Material:
     - _GradientColor1: {r: 0.6039216, g: 0.32941177, b: 0.45838094, a: 1}
     - _GradientColor2: {r: 1, g: 0.13182735, b: 0.0141509175, a: 1}
     - _GradientColor3: {r: 0.24528301, g: 0.042808827, b: 0.14783375, a: 1}
+    - _MoonColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SunColor: {r: 1, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []
