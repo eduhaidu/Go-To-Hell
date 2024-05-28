@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7074637638486911383}
   - component: {fileID: 5828518149824689339}
   - component: {fileID: 5399797292915590618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DamageZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,6 +152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d41a4567b7f5a184799a00dbfdbd7210,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d41a4567b7f5a184799a00dbfdbd7210,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -212,7 +217,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &1866787355242948666
 MonoBehaviour:
   m_ObjectHideFlags: 0

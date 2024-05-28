@@ -5,7 +5,7 @@ using UnityEngine;
 public class RLauncher : MonoBehaviour
 {
     public GameObject RocketPrefab;
-    public float RocketSpeed = 10.0f;
+    public float RocketSpeed = 1.0f;
     //public int RocketCount;
     public Transform RocketSpawn;
     public Transform RocketOrientation;
@@ -15,11 +15,14 @@ public class RLauncher : MonoBehaviour
     public AudioSource RocketLauncherSource;
     public AudioClip RocketLauncherSound;
 
+    private bool canShoot = true;
+    public float delayBetweenRockets = 2.7f;
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1)&&canShoot)
         {
-            instantiateRocket();
+            StartCoroutine(InstantiateRocketWithDelay());
            
             //Take one rocket away from rocket script
             var weaponscr = WeaponScriptHolder.GetComponent<shoot>();
@@ -31,7 +34,14 @@ public class RLauncher : MonoBehaviour
         }
     }
 
-        public void instantiateRocket()
+    IEnumerator InstantiateRocketWithDelay(){
+        canShoot = false;
+        instantiateRocket();
+        yield return new WaitForSeconds(delayBetweenRockets);
+        canShoot = true;
+    }
+
+    public void instantiateRocket()
         {
             if (WeaponScriptHolder.GetComponent<shoot>().rocketCount > 0)
             {
