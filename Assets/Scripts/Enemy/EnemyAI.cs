@@ -29,6 +29,10 @@ public class EnemyAI : MonoBehaviour
     bool isDead=false;
     //public float attackDist; //At what dist from player can it attack?
 
+    //Gore
+    public ParticleSystem GoreParticle;
+    public GameObject GoreModel;
+
     //States
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
@@ -154,11 +158,22 @@ public class EnemyAI : MonoBehaviour
         transform.LookAt(null);
         attackRange=0;
         this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
-        anima.SetBool("Die",true);
-        Debug.Log("Enemy killed");
-    }
+        if (health > -1)
+        {
+            anima.SetBool("Die", true);
+        }
+        if (health < -1)
+        {
 
-    void OnDrawGizmosSelected(){
+            Instantiate(GoreModel,new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y+3,this.gameObject.transform.position.z),Quaternion.identity);
+            Instantiate(GoreParticle, this.gameObject.transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+            Debug.Log("Enemy killed");
+
+        }
+
+        void OnDrawGizmosSelected(){
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
