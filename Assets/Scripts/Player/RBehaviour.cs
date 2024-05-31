@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Q3Movement;
 using UnityEngine;
 
 public class RBehaviour : MonoBehaviour
@@ -21,6 +22,11 @@ public class RBehaviour : MonoBehaviour
             RadiusDamageScript.SetActive(true);
 
             var boom = Instantiate(RocketExplosionPrefab, transform.position, Quaternion.identity); //DO NOT FUCKING TOUCH THIS 
+            var explRadius = gameObject.GetComponent<SphereCollider>().radius;
+            if(Vector3.Distance(GameObject.Find("Q3Player").transform.position,this.transform.position)<=explRadius){
+                GameObject.Find("Q3Player").GetComponent<Q3PlayerController>().RocketJump();
+                Debug.Log("A sarit");
+            }
             print("Playing boom");
 
             RocketExplosionSource.PlayOneShot(RocketExplosionSound);  

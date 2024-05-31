@@ -35,6 +35,8 @@ namespace Q3Movement
         [SerializeField] private MovementSettings m_GroundSettings = new MovementSettings(7, 14, 10);
         [SerializeField] private MovementSettings m_AirSettings = new MovementSettings(7, 2, 2);
         [SerializeField] private MovementSettings m_StrafeSettings = new MovementSettings(1, 50, 50);
+        [Header("Rocket Jump")]
+        [SerializeField] private float m_RocketJumpForce = 10f;
 
         [Header("Audio")]
         [SerializeField] private AudioSource m_AudioSource;
@@ -258,6 +260,11 @@ namespace Q3Movement
 
             m_PlayerVelocity.x += accelspeed * targetDir.x;
             m_PlayerVelocity.z += accelspeed * targetDir.z;
+        }
+
+        public void RocketJump(){
+            m_PlayerVelocity.y += m_RocketJumpForce;
+            Debug.Log("RocketJump method called");
         }
     }
 }

@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Q3Movement;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ApplyDamageRadius : MonoBehaviour
 {
+    public GameObject RocketExplosionRadius;
+    public GameObject Player;
     public int radiusDamage = 65;
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,7 +21,6 @@ public class ApplyDamageRadius : MonoBehaviour
              int damage = Mathf.RoundToInt(radiusDamage*falloffFactor);
             enemy.health -= damage;
             Debug.Log("Enemy takes damage");
-
             this.gameObject.SetActive(false);
         }
         else

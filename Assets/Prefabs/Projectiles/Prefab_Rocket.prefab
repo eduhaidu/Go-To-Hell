@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa0790ff5f469f43bdf414104a9220e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RocketExplosionRadius: {fileID: 5180357701822095143}
+  Player: {fileID: 0}
   radiusDamage: 65
 --- !u!135 &5399797292915590618
 SphereCollider:
@@ -65,7 +67,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.04
+  m_Radius: 0.02
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &578673577031321103
 PrefabInstance:
