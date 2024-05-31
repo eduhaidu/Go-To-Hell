@@ -55,6 +55,9 @@ namespace Q3Movement
         private Transform m_Tran;
         private Transform m_CamTran;
 
+        //Extended custom variables
+        public float distfromrocket;
+
         private void Start()
         {
             m_Tran = transform;
@@ -263,7 +266,8 @@ namespace Q3Movement
         }
 
         public void RocketJump(){
-            m_PlayerVelocity.y += m_RocketJumpForce;
+            m_PlayerVelocity.y += m_RocketJumpForce-distfromrocket;
+
             Debug.Log("RocketJump method called");
         }
     }

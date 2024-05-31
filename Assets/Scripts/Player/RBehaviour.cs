@@ -14,6 +14,8 @@ public class RBehaviour : MonoBehaviour
 
     public GameObject RadiusDamageScript;
 
+    public float RocketJumpRadius = 3.0f;
+
     private void OnCollisionEnter(Collision collision)
     {
         if(!hasExploded){
@@ -22,11 +24,18 @@ public class RBehaviour : MonoBehaviour
             RadiusDamageScript.SetActive(true);
 
             var boom = Instantiate(RocketExplosionPrefab, transform.position, Quaternion.identity); //DO NOT FUCKING TOUCH THIS 
-            var explRadius = gameObject.GetComponent<SphereCollider>().radius;
-            if(Vector3.Distance(GameObject.Find("Q3Player").transform.position,this.transform.position)<=explRadius){
+            //var explRadius = gameObject.GetComponent<SphereCollider>().radius;
+
+            //WIP
+            if(Vector3.Distance(GameObject.Find("Q3Player").transform.position,this.transform.position)<=RocketJumpRadius){
+                var explosiondist = Vector3.Distance(this.transform.position, GameObject.Find("Q3Player").transform.position); //Store distance between rocket and player
+                var playerref = GameObject.Find("Q3Player");
+                playerref.GetComponent<Q3PlayerController>().distfromrocket = explosiondist;
                 GameObject.Find("Q3Player").GetComponent<Q3PlayerController>().RocketJump();
-                Debug.Log("A sarit");
-            }
+                //Debug.Log("A sarit");
+            } 
+
+            //WIP
             print("Playing boom");
 
             RocketExplosionSource.PlayOneShot(RocketExplosionSound);  
