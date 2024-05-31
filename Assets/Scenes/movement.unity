@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16817328, g: 0.07330975, b: 0.13095096, a: 1}
+  m_IndirectSpecularColor: {r: 0.29100102, g: 0.060859382, b: 0.10064541, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4945,6 +4945,11 @@ PrefabInstance:
       propertyPath: m_AudioSource
       value: 
       objectReference: {fileID: 1543738134}
+    - target: {fileID: 195063957999724060, guid: b0e0ce50c4410214f80cb45dced7091d,
+        type: 3}
+      propertyPath: m_RocketJumpForce
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 1429789731162643586, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
       propertyPath: m_Enabled
@@ -11415,7 +11420,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 28528
+    surfaceParameter: 44172
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: -3342820574331453260
@@ -11817,7 +11822,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 28550
+    surfaceParameter: 44204
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -1404256905368844665
@@ -22665,7 +22670,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 28590
+    surfaceParameter: 43918
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 6825692864360323767
@@ -24150,7 +24155,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 28550
+    surfaceParameter: 44204
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -1404256905368844665

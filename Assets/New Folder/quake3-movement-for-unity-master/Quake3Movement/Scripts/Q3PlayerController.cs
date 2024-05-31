@@ -55,8 +55,17 @@ namespace Q3Movement
         private Transform m_Tran;
         private Transform m_CamTran;
 
-        //Extended custom variables
+        // Extended custom variables
         public float distfromrocket;
+
+        // Sliding variables
+        public float SlideDuration = 3.0f;
+        public float SlideCooldown = 3.0f;
+        public float SlideSpeedMultiplier = 1.5f;
+        public float SlideSpeedThreshold = 5.0f;
+        private bool m_IsSliding = false;
+        private float m_SlideTimer = 0;
+        private float m_SlideCooldownTimer = 0;
 
         private void Start()
         {
@@ -76,13 +85,39 @@ namespace Q3Movement
             m_MouseLook.UpdateCursorLock();
             QueueJump();
 
-            if (m_Character.isGrounded)
+            if (m_IsSliding)
             {
-                GroundMove();
+                HandleSlide();
             }
             else
             {
-                AirMove();
+                if (Input.GetKey(KeyCode.LeftControl) && m_SlideCooldownTimer <= 0 && m_Character.isGrounded)
+                {
+                    if (Speed > SlideSpeedThreshold)
+                    {
+                        StartSlide();
+                    }
+                    else
+                    {
+                        Crouch();
+                    }
+                }
+                else
+                {
+                    if (m_SlideCooldownTimer > 0)
+                    {
+                        m_SlideCooldownTimer -= Time.deltaTime;
+                    }
+
+                    if (m_Character.isGrounded)
+                    {
+                        GroundMove();
+                    }
+                    else
+                    {
+                        AirMove();
+                    }
+                }
             }
 
             m_MouseLook.LookRotation(m_Tran, m_CamTran);
@@ -265,10 +300,62 @@ namespace Q3Movement
             m_PlayerVelocity.z += accelspeed * targetDir.z;
         }
 
-        public void RocketJump(){
-            m_PlayerVelocity.y += m_RocketJumpForce-distfromrocket;
+        private void StartSlide()
+        {
+            m_IsSliding = true;
+            m_SlideTimer = SlideDuration;
+            m_PlayerVelocity *= SlideSpeedMultiplier;
+        }
 
-            Debug.Log("RocketJump method called");
+        private void HandleSlide()
+        {
+            if (!Input.GetKey(KeyCode.LeftControl) || m_SlideTimer <= 0 || !m_Character.isGrounded)
+            {
+                m_IsSliding = false;
+                m_SlideCooldownTimer = SlideCooldown;
+                return;
+            }
+
+            m_SlideTimer -= Time.deltaTime;
+            ApplyFriction(0.1f); // Apply friction to gradually slow down
+            m_PlayerVelocity.y = -m_Gravity * Time.deltaTime; // Apply gravity to keep the player on the ground
+
+            // Update the movement direction while sliding
+            var wishdir = new Vector3(m_MoveInput.x, 0, m_MoveInput.z);
+            wishdir = m_Tran.TransformDirection(wishdir);
+            wishdir.Normalize();
+            m_MoveDirectionNorm = wishdir;
+            Accelerate(wishdir, m_GroundSettings.MaxSpeed, m_GroundSettings.Acceleration);
+        }
+
+        private void Crouch()
+        {
+            // Implement crouching logic here
+            // For example, adjust player height or speed
+        }
+
+        public void RocketJump(Vector3 explosionPosition, float explosionForce)
+        {
+            // Calculate the explosion direction
+            Vector3 explosionDirection = (m_Tran.position - explosionPosition).normalized;
+
+            // Ensure a significant upward force
+            if (explosionDirection.y < 0.5f)
+            {
+                explosionDirection.y = 0.5f; // Adjust upward component if needed
+            }
+
+            // Adjust the force by distance
+            float force = explosionForce / (distfromrocket + 1); // Adding 1 to avoid division by zero
+            Vector3 forceVector = explosionDirection * force;
+
+            // Clear current Y velocity to ensure the upward force is applied effectively
+            m_PlayerVelocity.y = 0;
+
+            // Apply the force to the player's velocity
+            m_PlayerVelocity += forceVector;
+
+            Debug.Log("RocketJump method called with force: " + forceVector.ToString());
         }
     }
 }
