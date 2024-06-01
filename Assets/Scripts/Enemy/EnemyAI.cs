@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering.Universal;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -37,6 +38,10 @@ public class EnemyAI : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
     // Start is called before the first frame update
+
+    //Decal
+    public DecalProjector DecalProjectorPrefab;
+
     void Start()
     {
         player = GameObject.Find("Q3Player").transform;
@@ -167,6 +172,13 @@ public class EnemyAI : MonoBehaviour
 
             Instantiate(GoreModel,new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y+1.5f,this.gameObject.transform.position.z),Quaternion.identity);
             Instantiate(GoreParticle, this.gameObject.transform.position, Quaternion.identity);
+
+            //DECAL STUFF
+            // Creates a new material instance for the DecalProjector.
+            var myDecalInstance = Instantiate(DecalProjectorPrefab,new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y+1, this.gameObject.transform.position.z),DecalProjectorPrefab.transform.rotation);
+            myDecalInstance.material = new Material(DecalProjectorPrefab.material);
+
+
             Destroy(this.gameObject);
         }
             Debug.Log("Enemy killed");

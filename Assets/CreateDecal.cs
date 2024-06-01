@@ -10,7 +10,7 @@ public class CreateDecal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject m_DecalProjectorObject = Instantiate(m_DecalProjectorPrefab,this.gameObject.transform.position,quaternion.identity);
+        GameObject m_DecalProjectorObject = Instantiate(m_DecalProjectorPrefab,this.gameObject.transform.position,m_DecalProjectorPrefab.transform.rotation);
         DecalProjector m_DecalProjectorComponent = m_DecalProjectorObject.GetComponent<DecalProjector>();
 
         // Creates a new material instance for the DecalProjector.
