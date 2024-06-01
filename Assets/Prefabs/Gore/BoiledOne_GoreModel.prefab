@@ -276,6 +276,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8682183949761581555}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee80a8e682c197146b12b0095f72098d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -9122848286116591581}
     - targetCorrespondingSourceObject: {fileID: -6814362063048284461, guid: ee80a8e682c197146b12b0095f72098d,
         type: 3}
       insertIndex: -1
@@ -935,3 +939,26 @@ MonoBehaviour:
   randomForceMin: {x: -2, y: -2, z: -2}
   randomForceMax: {x: 2, y: 2, z: 2}
   forceMode: 1
+--- !u!114 &-9122848286116591581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8874190070951513686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812882ac1b2ad4c46aacf308975a056f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelPieces:
+  - {fileID: 6235401655992178132}
+  - {fileID: 2930641821675044852}
+  - {fileID: 6474034378570909787}
+  - {fileID: 8185758623757932716}
+  - {fileID: 1377757249653517730}
+  - {fileID: 3208631496481921189}
+  - {fileID: 5217091113371709921}
+  - {fileID: 6857528056321388878}
+  - {fileID: 3833852290919125393}
+  - {fileID: 7440419218452957490}

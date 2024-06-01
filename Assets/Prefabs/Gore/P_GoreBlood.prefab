@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3480213186300635870}
   - component: {fileID: 4436601294675687485}
   - component: {fileID: 4767340303372861118}
+  - component: {fileID: -4114347809405557293}
   m_Layer: 0
   m_Name: P_GoreBlood
   m_TagString: Untagged
@@ -4890,6 +4891,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-4114347809405557293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315300454465404823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3f29f0fa2175640bde460ab86397be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7753069758011006400
 GameObject:
   m_ObjectHideFlags: 0
