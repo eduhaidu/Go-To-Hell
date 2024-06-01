@@ -165,7 +165,7 @@ public class EnemyAI : MonoBehaviour
         if (health < -1)
         {
 
-            Instantiate(GoreModel,new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y+3,this.gameObject.transform.position.z),Quaternion.identity);
+            Instantiate(GoreModel,new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y+1.5f,this.gameObject.transform.position.z),Quaternion.identity);
             Instantiate(GoreParticle, this.gameObject.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
