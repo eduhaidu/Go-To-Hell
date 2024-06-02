@@ -4047,6 +4047,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d88e39e410f4312498894e21ca380ae2, type: 3}
+--- !u!20 &314273925 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1347625643339651741, guid: b0e0ce50c4410214f80cb45dced7091d,
+    type: 3}
+  m_PrefabInstance: {fileID: 326344221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &318586178
 GameObject:
   m_ObjectHideFlags: 0
@@ -4838,26 +4844,51 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 195063957999724060, guid: b0e0ce50c4410214f80cb45dced7091d,
+    - target: {fileID: 748811463490469558, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
-      propertyPath: SlideDuration
-      value: 1
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 195063957999724060, guid: b0e0ce50c4410214f80cb45dced7091d,
+    - target: {fileID: 911131083389420836, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
-      propertyPath: m_RocketJumpForce
-      value: 25
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1429789731162643586, guid: b0e0ce50c4410214f80cb45dced7091d,
+    - target: {fileID: 3708933301744165829, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4184693882600464863, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
       propertyPath: m_Name
       value: Q3Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4457638992858128810, guid: b0e0ce50c4410214f80cb45dced7091d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379100710856761397, guid: b0e0ce50c4410214f80cb45dced7091d,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379100710856761397, guid: b0e0ce50c4410214f80cb45dced7091d,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1015
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590455813918400188, guid: b0e0ce50c4410214f80cb45dced7091d,
+        type: 3}
+      propertyPath: m_Cameras.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590455813918400188, guid: b0e0ce50c4410214f80cb45dced7091d,
+        type: 3}
+      propertyPath: m_Cameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 314273925}
     - target: {fileID: 7221495068216058771, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4907,6 +4938,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361258499924921462, guid: b0e0ce50c4410214f80cb45dced7091d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947055204186196543, guid: b0e0ce50c4410214f80cb45dced7091d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11250,7 +11291,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27468
+    surfaceParameter: 27466
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: -3342820574331453260
@@ -14019,7 +14060,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27492
+    surfaceParameter: 27490
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -1404256905368844665
@@ -22476,7 +22517,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27540
+    surfaceParameter: 27538
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 6825692864360323767
@@ -23869,7 +23910,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27492
+    surfaceParameter: 27490
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -1404256905368844665
