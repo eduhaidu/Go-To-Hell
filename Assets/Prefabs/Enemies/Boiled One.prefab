@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6f598a3548a8a234f9bf9eddc1a1d117,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.71
+      value: 12.31
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f598a3548a8a234f9bf9eddc1a1d117,
         type: 3}
@@ -36,7 +36,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6f598a3548a8a234f9bf9eddc1a1d117,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 26.74
+      value: 5.81
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f598a3548a8a234f9bf9eddc1a1d117,
         type: 3}
@@ -303,10 +303,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7687352474270599521}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f598a3548a8a234f9bf9eddc1a1d117,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8664670112217456981}
   m_SourcePrefab: {fileID: 100100000, guid: 6f598a3548a8a234f9bf9eddc1a1d117, type: 3}
 --- !u!1 &4929905840821626890 stripped
 GameObject:
@@ -404,25 +400,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   health: 100
-  enemyDamage: 10
+  enemyDamage: 30
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 10
   timeBetweenAttacks: 0
+  GoreParticle: {fileID: 4436601294675687485, guid: 1bf5ffab519c3424cafec3280d04ebb1,
+    type: 3}
+  GoreModel: {fileID: 8874190070951513686, guid: 6c54217a26686184095f8cfa108e20a5,
+    type: 3}
   sightRange: 100
   attackRange: 1
   playerInSightRange: 0
   playerInAttackRange: 0
---- !u!114 &8664670112217456981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4929905840821626890}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cc7cb52c7345a64bbc8819230994e3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 100
-  anima: {fileID: 314786371074605848}
+  DecalProjectorPrefab: {fileID: 2067687848654730379, guid: 2aba0090dda24ad409fbedc995807e94,
+    type: 3}
