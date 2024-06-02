@@ -308,8 +308,14 @@ MonoBehaviour:
     MaxSpeed: 1
     Acceleration: 50
     Deceleration: 50
+  m_RocketJumpForce: 25
   m_AudioSource: {fileID: 5594637721325638528}
   m_JumpSound: {fileID: 8300000, guid: a77e0aeb650e6f549abcb6ef5d0d45d8, type: 3}
+  distfromrocket: 0
+  SlideDuration: 1
+  SlideCooldown: 3
+  SlideSpeedMultiplier: 1.5
+  SlideSpeedThreshold: 5
 --- !u!114 &1429789731162643586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +323,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4184693882600464863}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56a75dc49fa305c4d87d2854fe203452, type: 3}
   m_Name: 
@@ -5813,6 +5819,7 @@ MonoBehaviour:
   WeaponScriptHolder: {fileID: 7361258499924921462}
   RocketLauncherSource: {fileID: 4197539472004047311}
   RocketLauncherSound: {fileID: 8300000, guid: 40c101119a8622f468ac0b44e731c10d, type: 3}
+  delayBetweenRockets: 2.7
 --- !u!82 &1724815556774704103
 AudioSource:
   m_ObjectHideFlags: 0
