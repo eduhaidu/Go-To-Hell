@@ -5973,7 +5973,7 @@ MonoBehaviour:
   WeaponScriptHolder: {fileID: 7361258499924921462}
   RocketLauncherSource: {fileID: 4197539472004047311}
   RocketLauncherSound: {fileID: 8300000, guid: 40c101119a8622f468ac0b44e731c10d, type: 3}
-  delayBetweenRockets: 2.7
+  delayBetweenRockets: 1.3
 --- !u!82 &1724815556774704103
 AudioSource:
   m_ObjectHideFlags: 0
