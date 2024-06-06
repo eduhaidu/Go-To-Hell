@@ -391,7 +391,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   anima: {fileID: 314786371074605848}
   enemynavmesh: {fileID: 5603640313042938383}
-  ChaseSpeed: 14
+  ChaseSpeed: 111
   player: {fileID: 0}
   WhatIsGround:
     serializedVersion: 2

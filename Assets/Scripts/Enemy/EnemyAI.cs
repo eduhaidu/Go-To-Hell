@@ -120,6 +120,7 @@ public class EnemyAI : MonoBehaviour
         if (!isDead)
         {
             transform.LookAt(player);
+            //Quaternion.RotateTowards(this.transform.rotation, Player.transform.rotation, 111.0f) ;
             anima.SetBool("Attack", true);
             //var health_script = Player.GetComponent<player_health>();
            //health_script.Instadeath();
@@ -172,7 +173,7 @@ public class EnemyAI : MonoBehaviour
 
             Instantiate(GoreModel,new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y+1.5f,this.gameObject.transform.position.z),Quaternion.identity);
             Instantiate(GoreParticle, this.gameObject.transform.position, Quaternion.identity);
-
+            
             //DECAL STUFF
             // Creates a new material instance for the DecalProjector.
             var myDecalInstance = Instantiate(DecalProjectorPrefab,new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y+1, this.gameObject.transform.position.z),DecalProjectorPrefab.transform.rotation);

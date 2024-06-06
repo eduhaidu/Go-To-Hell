@@ -297,7 +297,7 @@ MonoBehaviour:
   m_AutoBunnyHop: 1
   m_AirControl: 0.3
   m_GroundSettings:
-    MaxSpeed: 7
+    MaxSpeed: 12
     Acceleration: 14
     Deceleration: 10
   m_AirSettings:
@@ -5908,6 +5908,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4197539472004047311}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 90764528cf202a449becc79438c22b69,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 517931570552970882}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 90764528cf202a449becc79438c22b69,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 556416332408137766}
   m_SourcePrefab: {fileID: 100100000, guid: 90764528cf202a449becc79438c22b69, type: 3}
 --- !u!1 &748811463490469558 stripped
 GameObject:
@@ -5948,8 +5956,8 @@ MonoBehaviour:
   GunBarrel: {fileID: 748811463490469558}
   damage: 10
   range: 100
-  bulletCount: 300
-  rocketCount: 3
+  bulletCount: 0
+  rocketCount: 0
   WeaponSoundSource: {fileID: 1724815556774704103}
   MachineGunSound: {fileID: 8300000, guid: bf3f407dc14be784cb9559d2b696ee3b, type: 3}
   origin: {fileID: 1514042887466428899}
@@ -6166,6 +6174,43 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &517931570552970882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361258499924921462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52939ab693b7c74da9c08cc465d53ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponAnimator: {fileID: 556416332408137766}
+  isWalking: 0
+  AnimaBoolTrigger: isWalking
+  MultiGun: {fileID: 7361258499924921462}
+--- !u!95 &556416332408137766
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361258499924921462}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85e4a7f4910fe9743ba09ea3a181eb29, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &7882321027092043468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 90764528cf202a449becc79438c22b69,
