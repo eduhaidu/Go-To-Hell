@@ -4,10 +4,9 @@ Shader "Custom/LavaShader"
     {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _LavaColor ("Lava Color", Color) = (1, 0.5, 0, 1)
-        _EmissiveColor ("Emissive Color", Color) = (1, 0.2, 0, 1)
         _Speed ("Flow Speed", Range(0.1, 10)) = 1
         _DistortionStrength ("Distortion Strength", Range(0, 1)) = 0.1
-        _EmissiveIntensity ("Emissive Intensity", Range(0, 10)) = 1
+        _TextureScale ("Texture Scale", Float) = 1
     }
     SubShader
     {
@@ -37,16 +36,20 @@ Shader "Custom/LavaShader"
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _LavaColor;
-            float4 _EmissiveColor;
             float _Speed;
             float _DistortionStrength;
-            float _EmissiveIntensity;
+            float _TextureScale;
 
             v2f vert (appdata_t v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+
+                // Calculate world space UVs to keep texture size consistent
+                float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+                float3 objectScale = float3(length(unity_ObjectToWorld[0].xyz), length(unity_ObjectToWorld[1].xyz), length(unity_ObjectToWorld[2].xyz));
+                o.uv = worldPos.xz / (objectScale.xz * _TextureScale);
+
                 return o;
             }
 
@@ -62,14 +65,6 @@ Shader "Custom/LavaShader"
                 float time = _Time.y; // Get the current time
                 float2 flowUV = FlowUV(i.uv, time, _Speed, _DistortionStrength);
                 fixed4 col = tex2D(_MainTex, flowUV) * _LavaColor;
-
-                // Calculate luminance to create a mask
-                float luminance = dot(col.rgb, float3(0.299, 0.587, 0.114));
-                float emissiveMask = smoothstep(0.3, 1.0, luminance); // Adjust threshold as needed
-
-                // Apply emissive color based on the luminance mask
-                fixed4 emissive = _EmissiveColor * _EmissiveIntensity * emissiveMask;
-                col.rgb += emissive.rgb;
 
                 return col;
             }
