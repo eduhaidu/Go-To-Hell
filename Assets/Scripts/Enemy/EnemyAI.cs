@@ -105,6 +105,7 @@ public class EnemyAI : MonoBehaviour
 
     void ChasePlayer(){
         agent.SetDestination(player.position);
+        //Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(player.position - this.transform.position), 0.1f);
         //Change to RUN animation
         anima.SetBool("isChasing", true);
         anima.SetBool("Attack",false);

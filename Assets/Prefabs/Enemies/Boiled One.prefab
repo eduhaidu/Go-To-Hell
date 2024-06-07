@@ -46,17 +46,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6f598a3548a8a234f9bf9eddc1a1d117,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f598a3548a8a234f9bf9eddc1a1d117,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f598a3548a8a234f9bf9eddc1a1d117,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f598a3548a8a234f9bf9eddc1a1d117,
         type: 3}
@@ -408,8 +408,8 @@ MonoBehaviour:
     type: 3}
   GoreModel: {fileID: 8874190070951513686, guid: 6c54217a26686184095f8cfa108e20a5,
     type: 3}
-  sightRange: 100
-  attackRange: 1
+  sightRange: 24
+  attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
   DecalProjectorPrefab: {fileID: 2067687848654730379, guid: 2aba0090dda24ad409fbedc995807e94,

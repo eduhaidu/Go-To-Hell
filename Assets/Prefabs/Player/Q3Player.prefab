@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 8287451985627623395}
   - component: {fileID: 3061974766394352021}
   - component: {fileID: 2256164170474821030}
+  - component: {fileID: 3742966136511209331}
   m_Layer: 6
   m_Name: Q3Player
   m_TagString: Player
@@ -371,6 +372,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4184693882600464863}
   m_Enabled: 1
+--- !u!114 &3742966136511209331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4184693882600464863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca76499daed4ae41a10e2c87956afea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4227160218649804021
 GameObject:
   m_ObjectHideFlags: 0

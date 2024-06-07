@@ -11,6 +11,8 @@ TagManager:
   - DeathZone
   - concrete
   - RocketPickup
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX
