@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/C1m1WelcometoHell.unity
+    guid: 92ecab301f80e1b48882577475a54f69
+  - enabled: 1
     path: Assets/Scenes/movement.unity
     guid: 5c46e7fb9dd66ba46a00b837faf840e1
   m_configObjects: {}
