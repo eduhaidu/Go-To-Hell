@@ -345,7 +345,7 @@ MonoBehaviour:
   player: {fileID: 0}
   weaponScript: {fileID: 7361258499924921462}
   healthScript: {fileID: 4184693882600464863}
-  Player: {fileID: 0}
+  Player: {fileID: 4184693882600464863}
   doorScript: {fileID: 0}
   healthPickupSound: {fileID: 8300000, guid: 54759e71134c1914a9a6e0c58401af66, type: 3}
   bulletPickupSound: {fileID: 8300000, guid: 4ad8cf264663470458ca5db4286f0117, type: 3}

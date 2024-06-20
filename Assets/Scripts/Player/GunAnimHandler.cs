@@ -20,6 +20,10 @@ public class GunAnimHandler : MonoBehaviour
         {
             isWalking = false;
         }
+        if((Input.GetKey(KeyCode.A)&&Input.GetKey(KeyCode.D))||(Input.GetKey(KeyCode.W)&&Input.GetKey(KeyCode.S))){
+            
+            isWalking=false;
+        }
 
         if(isWalking ) { MultiGun.GetComponent<Animator>().SetBool(AnimaBoolTrigger, true); } else { MultiGun.GetComponent<Animator>().SetBool(AnimaBoolTrigger, false); }
     }

@@ -105,6 +105,8 @@ public class EnemyAI : MonoBehaviour
 
     void ChasePlayer(){
         agent.SetDestination(player.position);
+        // var rotation = Quaternion.LookRotation(player.position - transform.position);
+        // transform.rotation=Quaternion.Slerp(transform.rotation,rotation,Time.deltaTime);
         //Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(player.position - this.transform.position), 0.1f);
         //Change to RUN animation
         anima.SetBool("isChasing", true);
@@ -120,7 +122,8 @@ public class EnemyAI : MonoBehaviour
 
         if (!isDead)
         {
-            transform.LookAt(player);
+            transform.LookAt(player.position);
+            transform.eulerAngles=new Vector3(0,transform.eulerAngles.y,0);
             //Quaternion.RotateTowards(this.transform.rotation, Player.transform.rotation, 111.0f) ;
             anima.SetBool("Attack", true);
             //var health_script = Player.GetComponent<player_health>();
