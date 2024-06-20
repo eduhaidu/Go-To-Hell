@@ -38,7 +38,15 @@ public class FootStepsFinal : MonoBehaviour
         bool wasWalking = isWalking;
         if (Grounded)
         {
-            isWalking = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S);
+            if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)){
+                isWalking=true;
+            }
+            else{
+                isWalking=false;
+            }
+            if((Input.GetKey(KeyCode.A)&&Input.GetKey(KeyCode.D))||(Input.GetKey(KeyCode.W)&&Input.GetKey(KeyCode.S))){
+                isWalking=false;
+            }
         }
         else
         {
