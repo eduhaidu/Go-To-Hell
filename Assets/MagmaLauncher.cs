@@ -9,12 +9,23 @@ public class MagmaLauncher : MonoBehaviour
     public Transform MagmaSpawn;
     public bool canShoot=true;
     public float delayBetweenProjectiles=2.2f;
+    public bool isInside=false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(canShoot){
+    void OnTriggerEnter(Collider other){
+        if(other.tag=="Player"){
+            isInside=true;
+        }
+    }
+
+    void Update(){
+        if(isInside&&canShoot){
             StartCoroutine(shootWithDelay());
+        }
+    }
+
+    void OnTriggerExit(Collider other){
+        if(other.tag=="Player"){
+            isInside = false;
         }
     }
 
