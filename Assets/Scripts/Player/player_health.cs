@@ -10,6 +10,8 @@ public class player_health : MonoBehaviour
 
     public GameObject DeathCam;
 
+    public ParticleSystem PlayerGoreBlood;
+    public GameObject PlayerGoreModel;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,7 +25,10 @@ public class player_health : MonoBehaviour
     {
         playerHealth = 0;
         PlayerCam.enabled = false;
-        Instantiate(DeathCam,PlayerCam.transform.position, Quaternion.identity);
+        Instantiate(DeathCam, PlayerCam.transform.position, Quaternion.identity);
+        Instantiate(PlayerGoreBlood,PlayerCam.transform.position, Quaternion.identity);
+        Instantiate(PlayerGoreModel, PlayerCam.transform.position, Quaternion.identity);
+
         Destroy(PlayerPrefab);
     }
 }
