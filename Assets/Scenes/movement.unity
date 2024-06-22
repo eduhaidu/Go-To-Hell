@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1742168, g: 0.07253775, b: 0.12897462, a: 1}
+  m_IndirectSpecularColor: {r: 0.16971326, g: 0.07518554, b: 0.13377075, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12471,7 +12471,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 44412
+    surfaceParameter: 27526
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 1821834334745752380
@@ -13799,7 +13799,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 44388
+    surfaceParameter: 27500
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 6550892612923593391
@@ -26705,7 +26705,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 44016
+    surfaceParameter: 27570
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 2096693438023144615
@@ -28479,7 +28479,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 44412
+    surfaceParameter: 27526
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 1821834334745752380
