@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7768374162846543782}
   - component: {fileID: 6722750824400524934}
   - component: {fileID: 896740202971604225}
+  - component: {fileID: -6528233739038896065}
   m_Layer: 0
   m_Name: DeathCam
   m_TagString: Untagged
@@ -187,3 +188,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-6528233739038896065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5067781003326355249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4bb05a0a4840234e9b15c7654d8af65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
