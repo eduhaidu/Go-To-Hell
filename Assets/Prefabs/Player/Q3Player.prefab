@@ -366,6 +366,10 @@ MonoBehaviour:
   PlayerPrefab: {fileID: 4184693882600464863}
   DeathCam: {fileID: 5067781003326355249, guid: b0f8f0ea115157b4abae5ec8dbd46698,
     type: 3}
+  PlayerGoreBlood: {fileID: 4436601294675687485, guid: 1bf5ffab519c3424cafec3280d04ebb1,
+    type: 3}
+  PlayerGoreModel: {fileID: 1078817426636640030, guid: eaf00b3792bdc6649a880a511c294fcf,
+    type: 3}
 --- !u!81 &2256164170474821030
 AudioListener:
   m_ObjectHideFlags: 0
