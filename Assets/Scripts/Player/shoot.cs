@@ -57,6 +57,7 @@ public class shoot : MonoBehaviour
     {
         if(Input.GetMouseButton(0)){
             if(bulletCount>0){
+                CameraShake.Shake(0.1f,0.1f);
                 StartCoroutine(WeaponVisuals());
                 StartCoroutine(FireGun());
                 RotateBarrel();

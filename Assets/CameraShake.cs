@@ -8,7 +8,7 @@ public class CameraShake : MonoBehaviour
     public static CameraShake Instance;
 
     private void Awake() => Instance = this;
-
+    
     private void onShake(float duration, float strength){
         transform.DOShakePosition(duration,strength);
         transform.DOShakeRotation(duration,strength);
