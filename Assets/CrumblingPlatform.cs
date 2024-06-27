@@ -19,6 +19,7 @@ public class CrumblingPlatform : MonoBehaviour
     IEnumerator CrumblePlatform(){
         yield return new WaitForSeconds(timeBeforeCrumble);
         PlatformPieces[0].SetActive(false);
+        this.gameObject.GetComponent<BoxCollider>().enabled=false;
         for (int i=1;i<PlatformPieces.Length;i++){
             PlatformPieces[i].SetActive(true);
         }
