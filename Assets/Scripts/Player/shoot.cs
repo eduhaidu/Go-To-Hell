@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class shoot : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class shoot : MonoBehaviour
     public AudioClip MachineGunSound;
 
     public Transform origin;
-    // Start is called before the first frame update
+  
     void Start()
     {
 
@@ -57,7 +58,7 @@ public class shoot : MonoBehaviour
     {
         if(Input.GetMouseButton(0)){
             if(bulletCount>0){
-                CameraShake.Shake(0.1f,0.1f);
+                CameraShaker.Instance.ShakeOnce(.5f,4f,.1f,.1f);
                 StartCoroutine(WeaponVisuals());
                 StartCoroutine(FireGun());
                 RotateBarrel();
@@ -69,7 +70,6 @@ public class shoot : MonoBehaviour
                 MuzzleParticles.Stop();
             }
         }
-       
     }
 
     IEnumerator FireGun()

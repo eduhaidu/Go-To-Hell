@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using EZCameraShake;
 
 public class CrumblingPlatform : MonoBehaviour
 {
@@ -11,8 +12,15 @@ public class CrumblingPlatform : MonoBehaviour
     public GameObject[] PlatformPieces;
     void OnTriggerEnter(Collider other){
         if(other.tag=="Player"){
-            CameraShake.Shake(timeBeforeCrumble,shakeStrenght);
+            
+            CameraShaker.Instance.ShakeOnce(6f,4f,.1f,2f);
             StartCoroutine(CrumblePlatform());
+        }
+    }
+
+    void OnTriggerExit(Collider other){
+        if(other.tag=="Player"){
+            CameraShake.StopShake();
         }
     }
 
