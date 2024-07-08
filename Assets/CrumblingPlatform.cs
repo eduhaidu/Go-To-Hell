@@ -13,7 +13,7 @@ public class CrumblingPlatform : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if(other.tag=="Player"){
             
-            CameraShaker.Instance.ShakeOnce(6f,4f,.1f,2f);
+            CameraShaker.Instance.ShakeOnce(10f,4f,.1f,2f);
             StartCoroutine(CrumblePlatform());
         }
     }
