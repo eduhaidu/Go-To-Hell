@@ -23,7 +23,7 @@ namespace EZCameraShake
         /// <summary>
         /// Offset that will be applied to the camera's default (0,0,0) rest position
         /// </summary>
-        public Vector3 RestPositionOffset = new Vector3(0, 1, 0);
+        public Vector3 RestPositionOffset = new Vector3(0, 0, 0);
         /// <summary>
         /// Offset that will be applied to the camera's default (0,0,0) rest rotation
         /// </summary>
