@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1742168, g: 0.07253775, b: 0.12897462, a: 1}
+  m_IndirectSpecularColor: {r: 0.16971326, g: 0.07518554, b: 0.13377075, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5390,17 +5390,17 @@ PrefabInstance:
     - target: {fileID: 7221495068216058771, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.718292
+      value: 8.21
       objectReference: {fileID: 0}
     - target: {fileID: 7221495068216058771, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.85
+      value: 3.42
       objectReference: {fileID: 0}
     - target: {fileID: 7221495068216058771, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.4456778
+      value: -28.13
       objectReference: {fileID: 0}
     - target: {fileID: 7221495068216058771, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
@@ -12427,7 +12427,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27602
+    surfaceParameter: 27724
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 1821834334745752380
@@ -13708,7 +13708,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27574
+    surfaceParameter: 27698
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 6550892612923593391
@@ -25591,6 +25591,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &1876400872 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6847431814894681856, guid: 7b674d4e2a2270d409578db8c8aa3099,
+    type: 3}
+  m_PrefabInstance: {fileID: 4342851143460954007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1908885755
 GameObject:
   m_ObjectHideFlags: 0
@@ -26614,7 +26620,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27648
+    surfaceParameter: 27768
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 2096693438023144615
@@ -28485,7 +28491,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27602
+    surfaceParameter: 27724
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 1821834334745752380
@@ -30023,6 +30029,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mage
       objectReference: {fileID: 0}
+    - target: {fileID: 3461395005840450890, guid: 255aeb79f928dae46bbe7a5b28e4a4dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7160243179184750761, guid: 255aeb79f928dae46bbe7a5b28e4a4dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30328,17 +30339,17 @@ PrefabInstance:
     - target: {fileID: 315646963249106689, guid: 7b674d4e2a2270d409578db8c8aa3099,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.293404
+      value: 11.03
       objectReference: {fileID: 0}
     - target: {fileID: 315646963249106689, guid: 7b674d4e2a2270d409578db8c8aa3099,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.10002041
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 315646963249106689, guid: 7b674d4e2a2270d409578db8c8aa3099,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.3162565
+      value: 9.01
       objectReference: {fileID: 0}
     - target: {fileID: 315646963249106689, guid: 7b674d4e2a2270d409578db8c8aa3099,
         type: 3}
@@ -30375,6 +30386,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5820338419724163524, guid: 7b674d4e2a2270d409578db8c8aa3099,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 2054417667}
+    - target: {fileID: 5820338419724163524, guid: 7b674d4e2a2270d409578db8c8aa3099,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2054417674}
+    - target: {fileID: 5820338419724163524, guid: 7b674d4e2a2270d409578db8c8aa3099,
+        type: 3}
+      propertyPath: SpellOrigin
+      value: 
+      objectReference: {fileID: 1876400872}
     - target: {fileID: 7919863726641926377, guid: 7b674d4e2a2270d409578db8c8aa3099,
         type: 3}
       propertyPath: m_Name

@@ -772,9 +772,11 @@ GameObject:
   m_Component:
   - component: {fileID: 315646963249106689}
   - component: {fileID: 4267423491796277656}
+  - component: {fileID: 2217363170314250105}
+  - component: {fileID: 5820338419724163524}
   m_Layer: 0
   m_Name: P_Enemy_Mage
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -796,6 +798,7 @@ Transform:
   - {fileID: 7551485782299810100}
   - {fileID: 3112648678869838871}
   - {fileID: 6801049039706235519}
+  - {fileID: 6847431814894681856}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &4267423491796277656
@@ -821,6 +824,70 @@ CapsuleCollider:
   m_Height: 3.3139925
   m_Direction: 1
   m_Center: {x: 0, y: 1.156994, z: 0}
+--- !u!195 &2217363170314250105
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919863726641926377}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &5820338419724163524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919863726641926377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ae8bc5ae6102b41809119f813801bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  anima: {fileID: 0}
+  enemynavmesh: {fileID: 2217363170314250105}
+  ChaseSpeed: 110
+  player: {fileID: 0}
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
+  WhatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 64
+  health: 100
+  enemyDamage: 60
+  enemyType: Mage
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 5
+  timeBetweenAttacks: 2
+  SpellObject: {fileID: 1655357246883221870, guid: 919106d989ec5d34aaa384c8ce34e2d4,
+    type: 3}
+  SpellOrigin: {fileID: 6847431814894681856}
+  GoreParticle: {fileID: 4436601294675687485, guid: 1bf5ffab519c3424cafec3280d04ebb1,
+    type: 3}
+  GoreModel: {fileID: 8874190070951513686, guid: 6c54217a26686184095f8cfa108e20a5,
+    type: 3}
+  sightRange: 20
+  attackRange: 10
+  playerInSightRange: 0
+  playerInAttackRange: 0
+  DecalProjectorPrefab: {fileID: 2067687848654730379, guid: 2aba0090dda24ad409fbedc995807e94,
+    type: 3}
 --- !u!1 &8468229386873292479
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +1004,37 @@ Transform:
   - {fileID: 3876044621429098993}
   m_Father: {fileID: 2455310048198883418}
   m_LocalEulerAnglesHint: {x: 23.916, y: 0, z: 0}
+--- !u!1 &8770660309511684794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6847431814894681856}
+  m_Layer: 0
+  m_Name: SpellOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6847431814894681856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8770660309511684794}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 315646963249106689}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9183153027690614067
 GameObject:
   m_ObjectHideFlags: 0
