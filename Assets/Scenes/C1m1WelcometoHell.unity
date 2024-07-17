@@ -6190,126 +6190,6 @@ MonoBehaviour:
     - EdgeIndices: 07000000060000000500000004000000
       TexGenIndex: 5
     Generation: 2
---- !u!1 &379430921
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 379430926}
-  - component: {fileID: 379430925}
-  - component: {fileID: 379430924}
-  - component: {fileID: 379430923}
-  - component: {fileID: 379430922}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Key
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &379430922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379430921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f434a3a1240dcf04b9b35d06b0e5e4e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyID: 0
-  isCollected: 0
---- !u!65 &379430923
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379430921}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &379430924
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379430921}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &379430925
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379430921}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &379430926
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379430921}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.309, y: -2.123, z: 52.1}
-  m_LocalScale: {x: 0.38, y: 0.38, z: 0.38}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &389247123
 GameObject:
   m_ObjectHideFlags: 0
@@ -7126,6 +7006,12 @@ MonoBehaviour:
     - EdgeIndices: 20000000210000002200000023000000
       TexGenIndex: 7
     Generation: 1
+--- !u!4 &443239913 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8476635575410739807, guid: b0e0ce50c4410214f80cb45dced7091d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1020855198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &461515658
 GameObject:
   m_ObjectHideFlags: 0
@@ -16556,7 +16442,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27524
+    surfaceParameter: 27594
     meshQueryIndex: 8
     subMeshQueryIndex: 0
     geometryHashValue: 7916125999009157898
@@ -17207,22 +17093,17 @@ PrefabInstance:
     - target: {fileID: 2478140090329917327, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
       propertyPath: InteractRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2478140090329917327, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
       propertyPath: InteractionSource
       value: 
-      objectReference: {fileID: 1020855199}
+      objectReference: {fileID: 443239913}
     - target: {fileID: 4184693882600464863, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
       propertyPath: m_Name
       value: Q3Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5379100710856761397, guid: b0e0ce50c4410214f80cb45dced7091d,
-        type: 3}
-      propertyPath: field of view
-      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7221495068216058771, guid: b0e0ce50c4410214f80cb45dced7091d,
         type: 3}
@@ -17279,12 +17160,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0e0ce50c4410214f80cb45dced7091d, type: 3}
---- !u!4 &1020855199 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7221495068216058771, guid: b0e0ce50c4410214f80cb45dced7091d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1020855198}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1029127358
 GameObject:
   m_ObjectHideFlags: 0
@@ -24319,7 +24194,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27660
+    surfaceParameter: 27730
     meshQueryIndex: 7
     subMeshQueryIndex: 0
     geometryHashValue: 6230465336028441811
@@ -25245,7 +25120,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27658
+    surfaceParameter: 27728
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -4389307292741044709
@@ -25671,7 +25546,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27732
+    surfaceParameter: 27802
     meshQueryIndex: 6
     subMeshQueryIndex: 0
     geometryHashValue: 1954861797838777250
@@ -26903,7 +26778,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27612
+    surfaceParameter: 27682
     meshQueryIndex: 2
     subMeshQueryIndex: 0
     geometryHashValue: -863938945749164823
@@ -27993,7 +27868,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27548
+    surfaceParameter: 27618
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 100260609340545700
@@ -28907,7 +28782,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27612
+    surfaceParameter: 27682
     meshQueryIndex: 2
     subMeshQueryIndex: 0
     geometryHashValue: -863938945749164823
@@ -30561,7 +30436,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27510
+    surfaceParameter: 27580
     meshQueryIndex: 10
     subMeshQueryIndex: 0
     geometryHashValue: -6711699148952445795
@@ -31247,7 +31122,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27542
+    surfaceParameter: 27612
     meshQueryIndex: 9
     subMeshQueryIndex: 0
     geometryHashValue: -7215728943639470519
@@ -35226,6 +35101,5 @@ SceneRoots:
   - {fileID: 719888318}
   - {fileID: 496476555}
   - {fileID: 1914624200}
-  - {fileID: 379430926}
   - {fileID: 1275042663700287888}
   - {fileID: 39147583}

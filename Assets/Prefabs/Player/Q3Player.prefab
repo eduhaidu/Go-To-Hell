@@ -730,8 +730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15bc6ff2699f724f801426230dcab09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractionSource: {fileID: 0}
-  InteractRange: 0
+  InteractionSource: {fileID: 8476635575410739807}
+  InteractRange: 10
 --- !u!1 &6989375262701982441
 GameObject:
   m_ObjectHideFlags: 0
@@ -5708,7 +5708,6 @@ GameObject:
   m_Component:
   - component: {fileID: 141164416748524633}
   - component: {fileID: 1347625643339651741}
-  - component: {fileID: 6633106456135617193}
   - component: {fileID: 1495066503644534888}
   m_Layer: 0
   m_Name: WeaponCamera
@@ -5783,14 +5782,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &6633106456135617193
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9150730514914246063}
-  m_Enabled: 1
 --- !u!114 &1495066503644534888
 MonoBehaviour:
   m_ObjectHideFlags: 0
