@@ -573,6 +573,7 @@ GameObject:
   - component: {fileID: 2638198996485630972}
   - component: {fileID: 6590455813918400188}
   - component: {fileID: 1913161658184921032}
+  - component: {fileID: 2478140090329917327}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -630,7 +631,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 69.9
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -717,6 +718,20 @@ MonoBehaviour:
   DefaultRotInfluence: {x: 1, y: 1, z: 1}
   RestPositionOffset: {x: 0, y: 1, z: 0}
   RestRotationOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &2478140090329917327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5720127464572393641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15bc6ff2699f724f801426230dcab09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionSource: {fileID: 0}
+  InteractRange: 0
 --- !u!1 &6989375262701982441
 GameObject:
   m_ObjectHideFlags: 0
