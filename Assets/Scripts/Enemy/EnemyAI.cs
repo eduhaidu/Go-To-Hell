@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     public float ChaseSpeed = 1.0f;
 
     public Transform player;
-    private NavMeshAgent agent;
+    protected NavMeshAgent agent;
     public LayerMask WhatIsGround, WhatIsPlayer;
     public float health = 100;
     public int enemyDamage=60;
@@ -29,13 +29,10 @@ public class EnemyAI : MonoBehaviour
     //Attacking
     public float timeBetweenAttacks;
 
-    public GameObject SpellObject;
-    public Transform SpellOrigin;
-
-    bool isDead=false;
+    protected bool isDead=false;
     //public float attackDist; //At what dist from player can it attack?
 
-    bool AlreadyAttacked = false;
+    protected bool AlreadyAttacked = false;
 
     //Gore
     public ParticleSystem GoreParticle;
@@ -59,7 +56,7 @@ public class EnemyAI : MonoBehaviour
         enemynavmesh.speed = ChaseSpeed;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         //Checks for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, WhatIsPlayer);
@@ -121,7 +118,7 @@ public class EnemyAI : MonoBehaviour
     }
 
    
-    void AttackPlayer()
+    protected virtual void AttackPlayer()
     {
         //Debug.Log("Enemy is attacking");
         //Make sure enemy doesn't move
@@ -134,9 +131,6 @@ public class EnemyAI : MonoBehaviour
             //Quaternion.RotateTowards(this.transform.rotation, Player.transform.rotation, 111.0f) ;
             anima.SetBool("Attack", true);
 
-            if(this.enemyType=="Mage"&&!AlreadyAttacked){
-                StartCoroutine(CastWithDelay());
-            }
             //var health_script = Player.GetComponent<player_health>();
            //health_script.Instadeath();
         }
@@ -149,17 +143,6 @@ public class EnemyAI : MonoBehaviour
         //     AlreadyAttacked=true;
         //     Invoke(nameof(ResetAttack),timeBetweenAttacks);
         // }
-    }
-    IEnumerator CastWithDelay(){
-        AlreadyAttacked=true;
-        CastSpell();
-        yield return new WaitForSeconds(timeBetweenAttacks);
-        AlreadyAttacked=false;
-    }
-    void CastSpell(){
-        var spell = Instantiate(SpellObject,SpellOrigin.position,Quaternion.identity);
-        spell.transform.forward=SpellOrigin.forward;
-        spell.GetComponent<Rigidbody>().AddForce(transform.forward*32f,ForceMode.Impulse);
     }
 
     void ExecuteDie()
